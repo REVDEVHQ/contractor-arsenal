@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Contractor Arsenal</title>
+    <meta name="description" content="Built by contractors who were tired of expensive agencies and complicated website builders. Learn our story.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #FF3B30;
+            --secondary: #FF9500;
+            --dark: #000000;
+            --dark-alt: #1a1a1a;
+            --white: #ffffff;
+            --gray: #8E8E93;
+            --light-bg: #f5f5f7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .header-wrap {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-img {
+            height: 45px;
+            width: auto;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.2s;
+            opacity: 0.9;
+        }
+        
+        .nav a:hover {
+            opacity: 1;
+            color: var(--secondary);
+        }
+        
+        .btn {
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gradient {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+        }
+        
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(255, 59, 48, 0.4);
+        }
+        
+        .page-hero {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-alt) 100%);
+            padding: 100px 40px 80px;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .page-hero h1 {
+            font-size: 56px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        
+        .page-hero p {
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        .section {
+            padding: 100px 40px;
+        }
+        
+        .section-dark {
+            background: var(--light-bg);
+        }
+        
+        .wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .story-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .story-content h2 {
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 30px;
+            letter-spacing: -1px;
+        }
+        
+        .story-content p {
+            font-size: 19px;
+            line-height: 1.8;
+            color: var(--dark);
+            margin-bottom: 25px;
+        }
+        
+        .story-content p strong {
+            font-weight: 800;
+            color: var(--primary);
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: var(--white);
+            border-radius: 20px;
+            border: 2px solid #f0f0f0;
+        }
+        
+        .value-icon {
+            font-size: 48px;
+            margin-bottom: 25px;
+        }
+        
+        .value-card h3 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        
+        .value-card p {
+            color: var(--gray);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+        
+        .mission-section {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-alt) 100%);
+            padding: 100px 40px;
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .mission-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .mission-content h2 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 30px;
+            letter-spacing: -1px;
+        }
+        
+        .mission-content p {
+            font-size: 22px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 25px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
+            margin-top: 60px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-num {
+            font-size: 52px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 16px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .clients-section {
+            padding: 100px 40px;
+            background: var(--white);
+        }
+        
+        .clients-content {
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .clients-content h2 {
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+        
+        .clients-content p {
+            font-size: 18px;
+            color: var(--gray);
+            margin-bottom: 60px;
+        }
+        
+        .client-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 80px;
+            flex-wrap: wrap;
+        }
+        
+        .client-logo {
+            height: 60px;
+            width: auto;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        
+        .client-logo:hover {
+            opacity: 1;
+        }
+        
+        .cta-section {
+            padding: 100px 40px;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-alt) 100%);
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .cta-section h2 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 25px;
+        }
+        
+        .cta-section p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+        }
+        
+        footer {
+            background: #000000;
+            color: var(--white);
+            padding: 60px 40px 30px;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+        
+        footer h4 {
+            font-size: 16px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        footer a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            transition: color 0.2s;
+        }
+        
+        footer a:hover {
+            color: var(--secondary);
+        }
+        
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+        
+        @media (max-width: 968px) {
+            .nav {
+                display: none;
+            }
+            
+            .page-hero h1 {
+                font-size: 38px;
+            }
+            
+            .values-grid,
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-wrap">
+            <a href="index.html">
+                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/69387c0a578cc7a588bf9199.png" alt="Contractor Arsenal" class="logo-img">
+            </a>
+            <nav class="nav">
+                <a href="features.html">Features</a>
+                <a href="templates.html">Templates</a>
+                <a href="https://buy.stripe.com/dRm9AT9oXfZVfeR7Qq9bO0B">Pricing</a>
+                <a href="about.html" style="color: var(--secondary);">About</a>
+                <a href="#" class="btn btn-gradient">Get Started</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <h1>Built By Contractors, For Contractors</h1>
+        <p>We got tired of watching good contractors get ripped off by agencies charging $5,000 for basic websites. So we built the platform that should've existed all along.</p>
+    </section>
+
+    <section class="section">
+        <div class="wrap">
+            <div class="story-content">
+                <h2>The Problem We Saw</h2>
+                <p>Every contractor faces the same challenge: <strong>you need a professional website, but you don't want to pay an agency $5,000+ and wait weeks for something that's overcomplicated and impossible to update.</strong></p>
+                
+                <p>You tried Wix and Squarespace, but they weren't built for contractors. Generic templates that don't understand your business. No local SEO. No lead capture systems. Just pretty pictures and empty promises.</p>
+                
+                <p>WordPress? Even worse. Plugins that break. Hosting that crashes. Security updates every week. You're a contractor, not a web developer.</p>
+                
+                <h2 style="margin-top: 60px;">So We Built Something Different</h2>
+                <p><strong>Contractor Arsenal is the first real website platform built exclusively for trades.</strong> Not a hacked WordPress theme. Not a generic website builder trying to serve everyone.</p>
+                
+                <p>We studied what actually works for contractors. We analyzed thousands of high-converting contractor websites. We talked to successful painting companies, roofers, landscapers, and remodelers.</p>
+                
+                <p>Then we built templates, SEO systems, and lead capture tools specifically for your industry. Everything optimized for one goal: <strong>turning website visitors into paying customers.</strong></p>
+                
+                <h2 style="margin-top: 60px;">Why We're Different</h2>
+                <p>We're not trying to be Shopify for everyone. We're not building features for restaurants, consultants, and real estate agents.</p>
+                
+                <p><strong>We only serve contractors.</strong> That singular focus means every feature, every template, every tool is built specifically for home service businesses.</p>
+                
+                <p>No bloat. No complexity. Just exactly what contractors need to dominate their local market online.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="wrap">
+            <h2 style="text-align: center; font-size: 42px; font-weight: 900; margin-bottom: 60px;">Our Core Values</h2>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Contractor-First</h3>
+                    <p>Every decision we make starts with: "Does this help contractors get more leads and close more jobs?" If not, we don't build it.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">⚡</div>
+                    <h3>Simple & Fast</h3>
+                    <p>You're running a business. You don't have time for complicated software. Everything we build is designed to be fast and easy to use.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">💪</div>
+                    <h3>No BS Pricing</h3>
+                    <p>We're transparent about costs. No hidden fees, no upsells you don't need, no contracts you can't escape. Just honest pricing.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🚀</div>
+                    <h3>Results-Driven</h3>
+                    <p>Pretty websites don't pay the bills. We focus on what actually matters: getting you more leads, more calls, more jobs.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🛠️</div>
+                    <h3>Built Different</h3>
+                    <p>We're not like other website builders. We understand contractor businesses because we've been there. We speak your language.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Real Support</h3>
+                    <p>When you need help, you talk to real people who understand your business. No offshore support centers, no canned responses.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission-section">
+        <div class="mission-content">
+            <h2>Our Mission</h2>
+            <p>To give every contractor in America access to a premium website without paying agency prices or dealing with complicated software.</p>
+            <p>We believe great contractors shouldn't be held back by bad websites. You deserve tools that are as professional as your work.</p>
+            
+            <div class="stats-grid">
+                <div class="stat">
+                    <div class="stat-num">500+</div>
+                    <div class="stat-label">Contractors Served</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">10K+</div>
+                    <div class="stat-label">Leads Generated</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">$2M+</div>
+                    <div class="stat-label">Revenue Driven</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">4.9★</div>
+                    <div class="stat-label">Average Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="clients-section">
+        <div class="clients-content">
+            <h2>Trusted By Professional Contractors</h2>
+            <p>These contractors ditched expensive agencies and took control of their online presence</p>
+            
+            <div class="client-logos">
+                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/68471ed8a4f63da1fa145d0a.png" alt="Refined Painting" class="client-logo">
+                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6903ec02c3f8ca406ca12f7b.png" alt="Golden Oak Painting" class="client-logo">
+                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/69053f551e8e88244c4cd1f3.png" alt="DGO Green" class="client-logo">
+                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/69053f4e817ba0e0ff0b4214.png" alt="Young Bucks Landscaping" class="client-logo">
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Ready to Join Them?</h2>
+        <p>Launch your professional contractor website in under 10 minutes</p>
+        <a href="https://buy.stripe.com/dRm9AT9oXfZVfeR7Qq9bO0B" class="btn btn-gradient" style="font-size: 18px; padding: 18px 40px;">Get Started - $29.99/mo</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h4>Contractor Arsenal</h4>
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.8;">The first real website platform built exclusively for contractors.</p>
+            </div>
+            
+            <div>
+                <h4>Platform</h4>
+                <a href="features.html">Features</a>
+                <a href="templates.html">Templates</a>
+                <a href="https://buy.stripe.com/dRm9AT9oXfZVfeR7Qq9bO0B">Pricing</a>
+            </div>
+            
+            <div>
+                <h4>Resources</h4>
+                <a href="about.html">About</a>
+                <a href="#">Support</a>
+                <a href="#">Contact</a>
+            </div>
+            
+            <div>
+                <h4>Legal</h4>
+                <a href="#">Terms</a>
+                <a href="#">Privacy</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Contractor Arsenal. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

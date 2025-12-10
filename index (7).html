@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contractor Arsenal - The Shopify for Contractors</title>
+    <meta name="description" content="Launch your premium contractor website in minutes. Purpose-built platform for painters, roofers, landscapers, and home service pros. $29.99/mo.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #FF3B30;
+            --secondary: #FF9500;
+            --dark: #000000;
+            --dark-alt: #1a1a1a;
+            --white: #ffffff;
+            --gray: #8E8E93;
+            --light-bg: #f5f5f7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        .header {
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .header-wrap {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-img {
+            height: 45px;
+            width: auto;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.2s;
+            opacity: 0.9;
+        }
+        
+        .nav a:hover {
+            opacity: 1;
+            color: var(--secondary);
+        }
+        
+        .btn {
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-gradient {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            box-shadow: 0 8px 24px rgba(255, 59, 48, 0.3);
+        }
+        
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(255, 59, 48, 0.4);
+        }
+        
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+            background: transparent;
+        }
+        
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--dark);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+            padding: 120px 40px 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255, 59, 48, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 8s ease-in-out infinite;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            left: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 149, 0, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 10s ease-in-out infinite reverse;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(255, 59, 48, 0.2) 0%, rgba(255, 149, 0, 0.2) 100%);
+            border: 1px solid rgba(255, 149, 0, 0.3);
+            color: var(--secondary);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            color: var(--white);
+            letter-spacing: -2px;
+        }
+        
+        .hero h1 .gradient-text {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: 22px;
+            line-height: 1.6;
+            margin-bottom: 45px;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 60px;
+            justify-content: center;
+            margin-top: 80px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-num {
+            font-size: 48px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 15px;
+            font-weight: 600;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 100px 40px;
+            background: var(--white);
+        }
+        
+        .section-header {
+            max-width: 800px;
+            margin: 0 auto 70px;
+            text-align: center;
+        }
+        
+        .section-header h2 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        
+        .section-header p {
+            font-size: 20px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        
+        .features-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        
+        .feature-card {
+            background: var(--white);
+            padding: 45px 35px;
+            border-radius: 20px;
+            border: 2px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--secondary);
+            box-shadow: 0 20px 40px rgba(255, 149, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+        
+        .feature-card h3 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card p {
+            color: var(--gray);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+        
+        /* Templates Showcase */
+        .templates {
+            padding: 100px 40px;
+            background: linear-gradient(180deg, var(--light-bg) 0%, var(--white) 100%);
+        }
+        
+        .templates-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .template-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .template-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+        }
+        
+        .template-preview {
+            height: 280px;
+            background: linear-gradient(135deg, #f5f5f7 0%, #e8e8eb 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--gray);
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        
+        .template-preview-iframe {
+            height: 280px;
+            background: #ffffff;
+            overflow: hidden;
+            position: relative;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .template-info {
+            padding: 25px;
+        }
+        
+        .template-info h3 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .template-info p {
+            color: var(--gray);
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .template-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(255, 59, 48, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%);
+            color: var(--primary);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+        
+        .btn-template-preview,
+        .btn-template-use {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-align: center;
+            flex: 1;
+        }
+        
+        .btn-template-preview {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-template-preview:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-template-use {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            border: none;
+        }
+        
+        .btn-template-use:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 59, 48, 0.3);
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 100px 40px;
+            background: var(--dark);
+            color: var(--white);
+        }
+        
+        .pricing .section-header h2,
+        .pricing .section-header p {
+            color: var(--white);
+        }
+        
+        .pricing .section-header p {
+            opacity: 0.8;
+        }
+        
+        .pricing-card {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--dark-alt);
+            border: 2px solid rgba(255, 149, 0, 0.3);
+            border-radius: 24px;
+            padding: 50px;
+            text-align: center;
+        }
+        
+        .price {
+            font-size: 72px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+        
+        .price-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+        
+        .features-list {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 40px;
+        }
+        
+        .features-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 16px;
+        }
+        
+        .features-list li:before {
+            content: "✓";
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+        
+        /* Social Proof */
+        .social-proof {
+            padding: 80px 40px;
+            background: var(--white);
+        }
+        
+        .social-proof-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .social-proof h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--gray);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .client-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .client-logo {
+            height: 50px;
+            width: auto;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+        
+        .client-logo:hover {
+            opacity: 1;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 40px;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-alt) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255, 149, 0, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-section h2 {
+            font-size: 56px;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+        }
+        
+        .cta-section p {
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 45px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #000000;
+            color: var(--white);
+            padding: 80px 40px 40px;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        footer h4 {
+            font-size: 16px;
+            font-weight: 800;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        footer p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        footer a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            transition: color 0.2s;
+        }
+        
+        footer a:hover {
+            color: var(--secondary);
+        }
+        
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 28px;
+            cursor: pointer;
+        }
+        
+        /* Responsive */
+        @media (max-width: 968px) {
+            .nav {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 42px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+            }
+            
+            .hero-stats {
+                flex-wrap: wrap;
+                gap: 30px;
+            }
+            
+            .features-grid,
+            .templates-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .section-header h2 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-wrap">
+            <div class="logo-container">
+                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/69387c0a578cc7a588bf9199.png" alt="Contractor Arsenal" class="logo-img">
+            </div>
+            <nav class="nav">
+                <a href="features.html">Features</a>
+                <a href="templates.html">Templates</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About</a>
+                <a href="#" class="btn btn-gradient">Get Started</a>
+            </nav>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">The Shopify for Contractors</div>
+            <h1>Launch Your Premium<br><span class="gradient-text">Contractor Website</span><br>In Minutes</h1>
+            <p>No coding. No WordPress. No BS. Just a professional website built specifically for trades that converts visitors into customers.</p>
+            
+            <div class="hero-cta">
+                <a href="https://buy.stripe.com/dRm9AT9oXfZVfeR7Qq9bO0B" class="btn btn-gradient">Get Started - $29.99/mo</a>
+                <a href="templates.html" class="btn btn-outline">View Templates</a>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-num">10min</div>
+                    <div class="stat-label">Setup Time</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">$29.99</div>
+                    <div class="stat-label">Per Month</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">100%</div>
+                    <div class="stat-label">Mobile Optimized</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">0</div>
+                    <div class="stat-label">Coding Required</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="section-header">
+            <h2>Built For Contractors, Not Agencies</h2>
+            <p>Everything you need to dominate your local market, nothing you don't.</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>Industry-Specific Templates</h3>
+                <p>Choose from templates designed specifically for painters, roofers, landscapers, and more. Not generic website builders.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>10-Minute Setup</h3>
+                <p>Upload your logo, choose colors, add photos, enter service areas. Your professional website is live before lunch.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Built-In SEO Engine</h3>
+                <p>Automatic local SEO optimization, Google-ready schema, and pre-written descriptions. Rank higher without hiring an expert.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Mobile-First Design</h3>
+                <p>80% of contractors get leads from mobile. Your site looks perfect on every device, automatically.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Lead Capture Forms</h3>
+                <p>Custom quote forms that send leads directly to your phone and email. Never miss another opportunity.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🛠️</div>
+                <h3>Quick Fixes from Dev Team</h3>
+                <p>Need a tweak or urgent fix? Our dev team responds fast with updates, bug fixes, and customizations included.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="templates">
+        <div class="section-header">
+            <h2>Templates Made For Trades</h2>
+            <p>Professional designs that convert visitors into customers. Pick your industry and launch.</p>
+        </div>
+        
+        <div class="templates-grid">
+            <div class="template-card">
+                <div class="template-preview-iframe">
+                    <iframe src="template-painting-embed.html" style="width: 100%; height: 100%; border: none;"></iframe>
+                </div>
+                <div class="template-info">
+                    <h3>The Builder V1 - Painting</h3>
+                    <p>Perfect for painters, remodelers, and general contractors</p>
+                    <span class="template-badge">Most Popular</span>
+                    <div style="margin-top: 15px; display: flex; gap: 10px;">
+                        <a href="template-painting.html" target="_blank" class="btn-template-preview">Full Preview</a>
+                        <a href="https://buy.stripe.com/dRm9AT9oXfZVfeR7Qq9bO0B" class="btn-template-use">Use Template</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="template-card">
+                <div class="template-preview-iframe">
+                    <iframe src="template-remodeling-embed.html" style="width: 100%; height: 100%; border: none;"></iframe>
+                </div>
+                <div class="template-info">
+                    <h3>The Pro - Remodeling</h3>
+                    <p>Premium design for high-end contractors and luxury services</p>
+                    <span class="template-badge">Premium</span>
+                    <div style="margin-top: 15px; display: flex; gap: 10px;">
+                        <a href="template-remodeling.html" target="_blank" class="btn-template-preview">Full Preview</a>
+                        <a href="https://buy.stripe.com/dRm9AT9oXfZVfeR7Qq9bO0B" class="btn-template-use">Use Template</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="template-card">
+                <div class="template-preview-iframe">
+                    <iframe src="template-roofing-embed.html" style="width: 100%; height: 100%; border: none;"></iframe>
+                </div>
+                <div class="template-info">
+                    <h3>The Specialist - Roofing</h3>
+                    <p>Clean layout for roofers, HVAC, plumbers, and electricians</p>
+                    <span class="template-badge">New</span>
+                    <div style="margin-top: 15px; display: flex; gap: 10px;">
+                        <a href="template-roofing.html" target="_blank" class="btn-template-preview">Full Preview</a>
+                        <a href="https://buy.stripe.com/dRm9AT9oXfZVfeR7Qq9bO0B" class="btn-template-use">Use Template</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <div class="section-header">
+            <h2>Simple, Transparent Pricing</h2>
+            <p>Professional websites built for contractors. Choose your plan.</p>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; max-width: 1000px; margin: 0 auto;">
+            <div class="pricing-card">
+                <div class="price">$29.99</div>
+                <div class="price-label">per month</div>
+                
+                <ul class="features-list">
+                    <li>Professional contractor template</li>
+                    <li>Custom branding & colors</li>
+                    <li>Unlimited photos & pages</li>
+                    <li>Built-in SEO optimization</li>
+                    <li>Lead capture forms</li>
+                    <li>Mobile-responsive design</li>
+                    <li>Service area targeting</li>
+                    <li>Free SSL certificate</li>
+                    <li>99.9% uptime guarantee</li>
+                    <li>Priority support</li>
+                </ul>
+                
+                <a href="https://buy.stripe.com/dRm9AT9oXfZVfeR7Qq9bO0B" class="btn btn-gradient" style="width: 100%; text-align: center;">Get Started</a>
+            </div>
+            
+            <div class="pricing-card" style="border-color: var(--secondary); background: linear-gradient(180deg, rgba(255, 149, 0, 0.05) 0%, var(--white) 100%);">
+                <div style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 20px; display: inline-block;">Enterprise</div>
+                <div class="price">$299</div>
+                <div class="price-label">one-time setup</div>
+                
+                <ul class="features-list">
+                    <li>Everything in Professional</li>
+                    <li>Done-for-you setup service</li>
+                    <li>Professional copywriting</li>
+                    <li>Custom design tweaks</li>
+                    <li>Photo optimization</li>
+                    <li>Advanced SEO setup</li>
+                    <li>Google Business integration</li>
+                    <li>Priority launch support</li>
+                    <li>Launch in 48 hours</li>
+                    <li>White glove service</li>
+                </ul>
+                
+                <a href="https://buy.stripe.com/3cI3cv9oX2952s59Yy9bO0C" class="btn btn-gradient" style="width: 100%; text-align: center;">Get Enterprise Setup</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="social-proof">
+        <div class="social-proof-content">
+            <h3>Trusted By Professional Contractors</h3>
+            <div class="client-logos">
+                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/68471ed8a4f63da1fa145d0a.png" alt="Refined Painting" class="client-logo">
+                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6903ec02c3f8ca406ca12f7b.png" alt="Golden Oak Painting" class="client-logo">
+                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/69053f551e8e88244c4cd1f3.png" alt="DGO Green" class="client-logo">
+                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/69053f4e817ba0e0ff0b4214.png" alt="Young Bucks Landscaping" class="client-logo">
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Dominate Your Market?</h2>
+            <p>Join hundreds of contractors who ditched expensive agencies and took control.</p>
+            <a href="pricing.html" class="btn btn-gradient" style="font-size: 18px; padding: 18px 40px;">Get Started Today</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h4>Contractor Arsenal</h4>
+                <p>The first real website platform built exclusively for contractors. No coding, no complexity, no BS.</p>
+                <p style="margin-top: 30px;">Built by contractors, for contractors.</p>
+            </div>
+            
+            <div>
+                <h4>Platform</h4>
+                <a href="features.html">Features</a>
+                <a href="templates.html">Templates</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="#">Demo</a>
+            </div>
+            
+            <div>
+                <h4>Resources</h4>
+                <a href="about.html">About</a>
+                <a href="#">Blog</a>
+                <a href="#">Support</a>
+                <a href="#">Contact</a>
+            </div>
+            
+            <div>
+                <h4>Legal</h4>
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Refund Policy</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Contractor Arsenal. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

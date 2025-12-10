@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Contractor Arsenal</title>
+    <meta name="description" content="Simple, transparent pricing for contractors. $29.99/month for everything you need to dominate your market.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #FF3B30;
+            --secondary: #FF9500;
+            --dark: #000000;
+            --dark-alt: #1a1a1a;
+            --white: #ffffff;
+            --gray: #8E8E93;
+            --light-bg: #f5f5f7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .header-wrap {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-img {
+            height: 45px;
+            width: auto;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.2s;
+            opacity: 0.9;
+        }
+        
+        .nav a:hover {
+            opacity: 1;
+            color: var(--secondary);
+        }
+        
+        .btn {
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-gradient {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+        }
+        
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(255, 59, 48, 0.4);
+        }
+        
+        .page-hero {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-alt) 100%);
+            padding: 100px 40px 80px;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .page-hero h1 {
+            font-size: 56px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        
+        .page-hero p {
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .price-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(255, 59, 48, 0.2) 0%, rgba(255, 149, 0, 0.2) 100%);
+            border: 1px solid rgba(255, 149, 0, 0.3);
+            color: var(--secondary);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        
+        .section {
+            padding: 80px 40px;
+        }
+        
+        .wrap {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .pricing-card {
+            background: var(--white);
+            border: 2px solid #f0f0f0;
+            border-radius: 20px;
+            padding: 45px;
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--secondary);
+            box-shadow: 0 20px 48px rgba(255, 149, 0, 0.15);
+        }
+        
+        .pricing-card.featured {
+            border-color: var(--secondary);
+            background: linear-gradient(180deg, rgba(255, 149, 0, 0.03) 0%, var(--white) 100%);
+            box-shadow: 0 12px 40px rgba(255, 149, 0, 0.2);
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.featured:hover {
+            transform: scale(1.08) translateY(-8px);
+        }
+        
+        .plan-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+        
+        .plan-name {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        
+        .plan-desc {
+            color: var(--gray);
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .plan-price {
+            margin-bottom: 30px;
+        }
+        
+        .price-amount {
+            font-size: 64px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+        
+        .price-period {
+            color: var(--gray);
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .plan-features {
+            list-style: none;
+            margin-bottom: 35px;
+        }
+        
+        .plan-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f5f5f7;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 15px;
+        }
+        
+        .plan-features li:before {
+            content: "✓";
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            flex-shrink: 0;
+            font-size: 12px;
+            margin-top: 2px;
+        }
+        
+        .plan-features li.disabled {
+            color: var(--gray);
+            opacity: 0.5;
+        }
+        
+        .plan-features li.disabled:before {
+            content: "—";
+            background: #e0e0e0;
+        }
+        
+        .plan-cta {
+            width: 100%;
+            text-align: center;
+            padding: 16px;
+            font-size: 16px;
+        }
+        
+        .addons-section {
+            background: var(--light-bg);
+        }
+        
+        .addons-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 50px;
+        }
+        
+        .addon-card {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 16px;
+            border: 2px solid #f0f0f0;
+        }
+        
+        .addon-card h3 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .addon-price {
+            font-size: 36px;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .addon-card p {
+            color: var(--gray);
+            line-height: 1.6;
+            font-size: 15px;
+        }
+        
+        .faq-section {
+            background: var(--white);
+        }
+        
+        .faq-grid {
+            max-width: 900px;
+            margin: 50px auto 0;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid #f0f0f0;
+            padding: 30px 0;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-item h3 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        
+        .faq-item p {
+            color: var(--gray);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        
+        .guarantee-section {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-alt) 100%);
+            padding: 80px 40px;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .guarantee-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .guarantee-icon {
+            font-size: 64px;
+            margin-bottom: 25px;
+        }
+        
+        .guarantee-content h2 {
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+        
+        .guarantee-content p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+        
+        footer {
+            background: #000000;
+            color: var(--white);
+            padding: 60px 40px 30px;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+        
+        footer h4 {
+            font-size: 16px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        footer a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            transition: color 0.2s;
+        }
+        
+        footer a:hover {
+            color: var(--secondary);
+        }
+        
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+        
+        @media (max-width: 968px) {
+            .nav {
+                display: none;
+            }
+            
+            .page-hero h1 {
+                font-size: 38px;
+            }
+            
+            .pricing-grid,
+            .addons-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-wrap">
+            <a href="index.html">
+                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/69387c0a578cc7a588bf9199.png" alt="Contractor Arsenal" class="logo-img">
+            </a>
+            <nav class="nav">
+                <a href="features.html">Features</a>
+                <a href="templates.html">Templates</a>
+                <a href="pricing.html" style="color: var(--secondary);">Pricing</a>
+                <a href="about.html">About</a>
+                <a href="#" class="btn btn-gradient">Get Started</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <h1>Simple Pricing That Scales</h1>
+        <p>One price. Everything included. No hidden fees, no surprises, no BS.</p>
+        <div class="price-badge">14-DAY FREE TRIAL • NO CREDIT CARD REQUIRED</div>
+    </section>
+
+    <section class="section">
+        <div class="wrap">
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="plan-name">Starter</div>
+                    <p class="plan-desc">Perfect for contractors just starting out</p>
+                    <div class="plan-price">
+                        <div class="price-amount">Free</div>
+                        <div class="price-period">forever</div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>1 Template</li>
+                        <li>Up to 5 pages</li>
+                        <li>Basic SEO</li>
+                        <li>Contact form</li>
+                        <li>Mobile responsive</li>
+                        <li class="disabled">Custom domain</li>
+                        <li class="disabled">Lead pipeline</li>
+                        <li class="disabled">Priority support</li>
+                    </ul>
+                    <a href="#" class="btn btn-gradient plan-cta">Start Free</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="plan-badge">Most Popular</div>
+                    <div class="plan-name">Professional</div>
+                    <p class="plan-desc">Everything you need to dominate your market</p>
+                    <div class="plan-price">
+                        <div class="price-amount">$29.99</div>
+                        <div class="price-period">per month</div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>All premium templates</li>
+                        <li>Unlimited pages</li>
+                        <li>Advanced SEO engine</li>
+                        <li>Lead capture forms</li>
+                        <li>Custom domain included</li>
+                        <li>Photo galleries</li>
+                        <li>Service area pages</li>
+                        <li>Review integration</li>
+                        <li>Analytics dashboard</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <a href="#" class="btn btn-gradient plan-cta">Start Free Trial</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="plan-name">Enterprise</div>
+                    <p class="plan-desc">For agencies and multi-location contractors</p>
+                    <div class="plan-price">
+                        <div class="price-amount">$99</div>
+                        <div class="price-period">per month</div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>Everything in Professional</li>
+                        <li>Up to 10 websites</li>
+                        <li>White-label option</li>
+                        <li>API access</li>
+                        <li>Team collaboration</li>
+                        <li>Advanced CRM</li>
+                        <li>Custom integrations</li>
+                        <li>Dedicated support</li>
+                    </ul>
+                    <a href="#" class="btn btn-gradient plan-cta">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section addons-section">
+        <div class="wrap">
+            <h2 style="text-align: center; font-size: 42px; font-weight: 900; margin-bottom: 20px;">Optional Add-Ons</h2>
+            <p style="text-align: center; font-size: 18px; color: var(--gray); max-width: 700px; margin: 0 auto;">Supercharge your website with these premium features</p>
+            
+            <div class="addons-grid">
+                <div class="addon-card">
+                    <h3>Done-For-You Setup</h3>
+                    <div class="addon-price">$299</div>
+                    <p>We'll build your entire website for you. Just send us your logo, photos, and content. Launch-ready in 48 hours.</p>
+                </div>
+                
+                <div class="addon-card">
+                    <h3>CRM Pro</h3>
+                    <div class="addon-price">$20<span style="font-size: 18px; font-weight: 600;">/mo</span></div>
+                    <p>Advanced lead management, automated follow-ups, appointment scheduling, and full pipeline tracking.</p>
+                </div>
+                
+                <div class="addon-card">
+                    <h3>Review Builder</h3>
+                    <div class="addon-price">$15<span style="font-size: 18px; font-weight: 600;">/mo</span></div>
+                    <p>Automatically request reviews after jobs, sync with Google, and display them beautifully on your site.</p>
+                </div>
+                
+                <div class="addon-card">
+                    <h3>Extra Pages</h3>
+                    <div class="addon-price">$10<span style="font-size: 18px; font-weight: 600;">/mo</span></div>
+                    <p>Add unlimited service pages, location pages, or custom landing pages to your website.</p>
+                </div>
+                
+                <div class="addon-card">
+                    <h3>Call Tracking</h3>
+                    <div class="addon-price">$25<span style="font-size: 18px; font-weight: 600;">/mo</span></div>
+                    <p>Track which marketing efforts drive phone calls. Includes dedicated tracking number and analytics.</p>
+                </div>
+                
+                <div class="addon-card">
+                    <h3>Google Ads Setup</h3>
+                    <div class="addon-price">$499</div>
+                    <p>One-time setup of optimized Google Ads campaigns targeting your service areas. Ad spend not included.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section faq-section">
+        <div class="wrap">
+            <h2 style="text-align: center; font-size: 42px; font-weight: 900; margin-bottom: 20px;">Frequently Asked Questions</h2>
+            <p style="text-align: center; font-size: 18px; color: var(--gray); max-width: 700px; margin: 0 auto 50px;">Everything you need to know about Contractor Arsenal</p>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Can I cancel anytime?</h3>
+                    <p>Yes! Cancel anytime with no questions asked. Your website will remain live until the end of your billing period. No hidden fees or cancellation charges.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do I really need a credit card for the trial?</h3>
+                    <p>Nope. Start your 14-day free trial with just an email address. No credit card required. Only add payment info when you're ready to go live.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Can I use my own domain name?</h3>
+                    <p>Absolutely! You can connect your existing domain (like yourcompany.com) or register a new one. We'll walk you through the simple setup process.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>How long does setup take?</h3>
+                    <p>Most contractors launch their website in under 10 minutes. Pick a template, upload your logo and photos, add your info, and publish. It's that simple.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Can I switch templates later?</h3>
+                    <p>Yes! Switch templates anytime. Your content, photos, and settings transfer over automatically. Test different designs to see what converts best.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What if I need help?</h3>
+                    <p>We're here for you. Priority support is included with all paid plans. Email, live chat, and video tutorials available. Most questions answered within 2 hours.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do you offer refunds?</h3>
+                    <p>Yes. If you're not satisfied within the first 30 days, we'll refund your payment in full. No questions, no hassle.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Will this work for my trade?</h3>
+                    <p>Yes! We have templates specifically designed for painters, roofers, landscapers, plumbers, electricians, HVAC, remodelers, concrete contractors, and more.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="guarantee-section">
+        <div class="guarantee-content">
+            <div class="guarantee-icon">✓</div>
+            <h2>30-Day Money-Back Guarantee</h2>
+            <p>Try Contractor Arsenal risk-free for 30 days. If you're not completely satisfied with your website, we'll refund every penny. No questions asked, no hoops to jump through.</p>
+            <a href="#" class="btn btn-gradient" style="font-size: 18px; padding: 18px 40px;">Start Your Free Trial</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h4>Contractor Arsenal</h4>
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.8;">The first real website platform built exclusively for contractors.</p>
+            </div>
+            
+            <div>
+                <h4>Platform</h4>
+                <a href="features.html">Features</a>
+                <a href="templates.html">Templates</a>
+                <a href="pricing.html">Pricing</a>
+            </div>
+            
+            <div>
+                <h4>Resources</h4>
+                <a href="about.html">About</a>
+                <a href="#">Support</a>
+                <a href="#">Contact</a>
+            </div>
+            
+            <div>
+                <h4>Legal</h4>
+                <a href="#">Terms</a>
+                <a href="#">Privacy</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Contractor Arsenal. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
