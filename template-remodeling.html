@@ -11,7 +11,7 @@
             margin: 0;
             padding: 0;
             background: #ffffff;
-            font-family: system-ui;
+            font-family: system-ui, -apple-system, sans-serif;
         }
 
         .preview-notice {
@@ -44,6 +44,7 @@
             font-weight: 700;
             box-shadow: 0 6px 20px rgba(0,0,0,0.3);
             font-size: 15px;
+            text-align: center;
         }
 
         .cta-secondary {
@@ -55,456 +56,687 @@
             font-weight: 600;
             border: 1px solid rgba(255,255,255,0.4);
             font-size: 14px;
+            text-align: center;
         }
 
-        /* 🔥 FULL REMODELING TEMPLATE CSS BELOW (YOUR WHOLE BLOCK) */
-        
         /* GLOBAL */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { width: 100%; overflow-x: hidden; font-family: system-ui, sans-serif; color: #111827; }
-        img { max-width: 100%; display: block; border-radius: 10px; }
-        html, body {
-    width: 100%;
-    overflow-x: hidden;
-    font-family: system-ui, sans-serif;
-    color: #111827;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-    border-radius: 10px;
-}
-
-/* NAVIGATION */
-nav {
-    width: 100%;
-    background: #ffffff;
-    padding: 20px 40px;
-    border-bottom: 1px solid #e5e7eb;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-}
-
-.nav-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo-text {
-    font-size: 22px;
-    font-weight: 800;
-    color: #111827;
-}
-
-.nav-links {
-    display: flex;
-    gap: 25px;
-    list-style: none;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #374151;
-    font-weight: 500;
-    font-size: 16px;
-}
-
-.nav-links a:hover {
-    color: #111827;
-}
-
-.nav-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.phone {
-    font-size: 16px;
-    font-weight: 700;
-    color: #111827;
-    text-decoration: none;
-}
-
-.btn {
-    padding: 10px 20px;
-    background: #2563EB;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: 0.2s;
-}
-
-.btn:hover {
-    background: #1D4ED8;
-}
-
-/* HERO */
-.hero {
-    background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center/cover no-repeat;
-    padding: 140px 40px;
-    color: white;
-    position: relative;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(17, 24, 39, 0.65);
-}
-
-.hero-content {
-    position: relative;
-    max-width: 650px;
-}
-
-.hero-badge {
-    background: rgba(255,255,255,0.2);
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 14px;
-    margin-bottom: 15px;
-    display: inline-block;
-}
-
-.hero h1 {
-    font-size: 48px;
-    font-weight: 800;
-    line-height: 1.2;
-}
-
-.hero .highlight {
-    color: #3B82F6;
-}
-
-.hero p {
-    margin: 15px 0;
-    font-size: 18px;
-    color: #f3f4f6;
-    max-width: 550px;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.btn-large {
-    padding: 14px 28px;
-    font-size: 17px;
-}
-
-.btn-outline {
-    background: transparent;
-    border: 2px solid white;
-}
-
-/* STATS */
-.stats {
-    background: #f9fafb;
-    padding: 40px 0;
-}
-
-.stats-grid {
-    max-width: 1100px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    text-align: center;
-    gap: 20px;
-}
-
-.stat-number {
-    font-size: 32px;
-    font-weight: 800;
-    color: #111827;
-}
-
-.stat-label {
-    font-size: 14px;
-    color: #6b7280;
-}
-
-/* SECTIONS GENERIC */
-section {
-    padding: 80px 40px;
-}
-
-.section-header {
-    margin-bottom: 40px;
-}
-
-.section-tag {
-    font-size: 14px;
-    font-weight: 700;
-    color: #2563EB;
-    text-transform: uppercase;
-}
-
-.section-title {
-    font-size: 36px;
-    font-weight: 800;
-    margin-top: 8px;
-}
-
-/* ABOUT */
-.about-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-    align-items: center;
-}
-
-.about-features {
-    margin-top: 25px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-.about-feature {
-    display: flex;
-    gap: 12px;
-}
-
-.about-feature-icon {
-    font-size: 22px;
-}
-
-/* SERVICES */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.service-card {
-    border: 1px solid #e5e7eb;
-    padding: 25px;
-    border-radius: 12px;
-    background: white;
-    transition: 0.2s;
-}
-
-.service-card:hover {
-    transform: translateY(-4px);
-    border-color: #2563EB;
-}
-
-.service-icon {
-    font-size: 28px;
-    margin-bottom: 10px;
-}
-
-.service-list {
-    margin-top: 15px;
-    padding-left: 18px;
-}
-
-/* PORTFOLIO */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.portfolio-item {
-    position: relative;
-}
-
-.portfolio-overlay {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
-    background: rgba(0,0,0,0.6);
-    color: white;
-    padding: 12px;
-    border-radius: 8px;
-}
-
-/* SERVICE AREAS */
-.areas-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    text-align: center;
-}
-
-.area-item {
-    padding: 20px;
-    background: #f3f4f6;
-    border-radius: 8px;
-}
-
-/* WHY CHOOSE US */
-.why-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.why-item {
-    text-align: center;
-    padding: 20px;
-}
-
-.why-icon {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-/* PROCESS */
-.process-steps {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-}
-
-.step {
-    border: 1px solid #e5e7eb;
-    padding: 25px;
-    border-radius: 12px;
-    background: white;
-}
-
-.step-number {
-    font-size: 32px;
-    font-weight: 800;
-    color: #2563EB;
-    margin-bottom: 10px;
-}
-
-/* TESTIMONIALS */
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.testimonial {
-    border: 1px solid #e5e7eb;
-    padding: 25px;
-    border-radius: 12px;
-}
-
-.stars {
-    color: #FBBF24;
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.author {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    margin-top: 15px;
-}
-
-.author-avatar {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background: #e5e7eb;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-}
-
-.author-info h4 {
-    font-size: 16px;
-    margin-bottom: 2px;
-}
-
-/* FAQ */
-.faq-list {
-    display: grid;
-    gap: 20px;
-}
-
-.faq-item {
-    border-bottom: 1px solid #e5e7eb;
-    padding-bottom: 20px;
-}
-
-/* CTA FORM */
-.contact-form-container {
-    max-width: 650px;
-    margin: auto;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.form-row {
-    display: flex;
-    gap: 20px;
-}
-
-.form-group input,
-.form-group select,
-textarea {
-    width: 100%;
-    padding: 14px;
-    border-radius: 8px;
-    border: 1px solid #d1d5db;
-}
-
-.form-submit {
-    background: #2563EB !important;
-}
-
-/* FOOTER */
-footer {
-    background: #111827;
-    color: white;
-    padding: 60px 40px 40px;
-}
-
-.footer-main {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-}
-
-.footer-section ul {
-    list-style: none;
-    margin-top: 10px;
-}
-
-.footer-section a {
-    color: #d1d5db;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 40px;
-    color: #9ca3af;
-}
-
-
-    /* 🔥 END REMODELING CSS */
-
-</style>
-
-    <!-- INSERT ALL YOUR REMODELING TEMPLATE'S ORIGINAL CSS BELOW -->
-    <!-- (Your entire big CSS block goes here unchanged) -->
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        html, body { 
+            width: 100%; 
+            overflow-x: hidden; 
+            font-family: system-ui, -apple-system, sans-serif; 
+            color: #111827; 
+        }
+        
+        img { 
+            max-width: 100%; 
+            display: block; 
+            border-radius: 10px; 
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* NAVIGATION */
+        nav {
+            width: 100%;
+            background: #ffffff;
+            padding: 20px 40px;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 800;
+            color: #111827;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            color: #111827;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .phone {
+            font-size: 16px;
+            font-weight: 700;
+            color: #111827;
+            text-decoration: none;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background: #2563EB;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: 0.2s;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #1D4ED8;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(rgba(17, 24, 39, 0.65), rgba(17, 24, 39, 0.65)), 
+                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000') center/cover no-repeat;
+            padding: 140px 40px;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero .highlight {
+            color: #3B82F6;
+        }
+
+        .hero p {
+            margin: 15px 0;
+            font-size: 18px;
+            color: #f3f4f6;
+            max-width: 550px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-large {
+            padding: 14px 28px;
+            font-size: 17px;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* STATS */
+        .stats {
+            background: #f9fafb;
+            padding: 40px 20px;
+        }
+
+        .stats-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            text-align: center;
+            gap: 20px;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 800;
+            color: #111827;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #6b7280;
+            display: block;
+            margin-top: 5px;
+        }
+
+        /* SECTIONS GENERIC */
+        section {
+            padding: 80px 40px;
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+        }
+
+        .section-header.center {
+            text-align: center;
+        }
+
+        .section-tag {
+            font-size: 14px;
+            font-weight: 700;
+            color: #2563EB;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 800;
+            margin-top: 8px;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #6b7280;
+            margin-top: 10px;
+        }
+
+        /* ABOUT */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-content h3 {
+            font-size: 24px;
+            margin: 20px 0 15px;
+        }
+
+        .about-content p {
+            margin: 15px 0;
+            line-height: 1.6;
+            color: #4b5563;
+        }
+
+        .about-features {
+            margin-top: 25px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .about-feature {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .about-feature-icon {
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+
+        .about-feature h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .about-feature p {
+            font-size: 14px;
+            color: #6b7280;
+            margin: 0;
+        }
+
+        /* SERVICES */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            border: 1px solid #e5e7eb;
+            padding: 25px;
+            border-radius: 12px;
+            background: white;
+            transition: 0.2s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            border-color: #2563EB;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #6b7280;
+            margin-bottom: 15px;
+        }
+
+        .service-list {
+            margin-top: 15px;
+            padding-left: 18px;
+            list-style: disc;
+        }
+
+        .service-list li {
+            margin: 8px 0;
+            color: #4b5563;
+        }
+
+        /* PORTFOLIO */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .portfolio-overlay h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .portfolio-overlay p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* SERVICE AREAS */
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .area-item {
+            padding: 20px;
+            background: #f3f4f6;
+            border-radius: 8px;
+        }
+
+        .area-item h4 {
+            font-size: 16px;
+        }
+
+        /* WHY CHOOSE US */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .why-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .why-icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .why-item h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .why-item p {
+            color: #6b7280;
+            font-size: 15px;
+        }
+
+        /* PROCESS */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .step {
+            border: 1px solid #e5e7eb;
+            padding: 25px;
+            border-radius: 12px;
+            background: white;
+            text-align: center;
+        }
+
+        .step-number {
+            font-size: 32px;
+            font-weight: 800;
+            color: #2563EB;
+            margin-bottom: 10px;
+        }
+
+        .step h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            color: #6b7280;
+            font-size: 15px;
+        }
+
+        /* TESTIMONIALS */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .testimonial {
+            border: 1px solid #e5e7eb;
+            padding: 25px;
+            border-radius: 12px;
+            background: white;
+        }
+
+        .stars {
+            color: #FBBF24;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-text {
+            margin: 15px 0;
+            line-height: 1.6;
+            color: #4b5563;
+        }
+
+        .author {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .author-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .author-info h4 {
+            font-size: 16px;
+            margin-bottom: 2px;
+        }
+
+        .author-info p {
+            font-size: 14px;
+            color: #6b7280;
+            margin: 0;
+        }
+
+        /* FAQ */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            gap: 20px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 20px;
+        }
+
+        .faq-item h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .faq-item p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        /* CTA FORM */
+        .cta {
+            background: #f9fafb;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .cta > p {
+            font-size: 18px;
+            color: #6b7280;
+            margin-bottom: 40px;
+        }
+
+        .contact-form-container {
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            width: 100%;
+        }
+
+        .form-group input,
+        .form-group select,
+        textarea {
+            width: 100%;
+            padding: 14px;
+            border-radius: 8px;
+            border: 1px solid #d1d5db;
+            font-family: inherit;
+            font-size: 15px;
+        }
+
+        .form-submit {
+            background: #2563EB !important;
+            width: 100%;
+        }
+
+        .form-note {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .form-note a {
+            color: #2563EB;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #111827;
+            color: white;
+            padding: 60px 40px 40px;
+        }
+
+        .footer-main {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-about h3,
+        .footer-section h4 {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .footer-about p,
+        .footer-section p {
+            margin: 8px 0;
+            color: #d1d5db;
+            font-size: 14px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .footer-section li {
+            margin: 8px 0;
+        }
+
+        .footer-section a {
+            color: #d1d5db;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-section a:hover {
+            color: #ffffff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #9ca3af;
+        }
+
+        .footer-bottom p {
+            margin: 5px 0;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .cta-floating {
+                left: 10px;
+                right: 10px;
+            }
+
+            .cta-main,
+            .cta-secondary {
+                font-size: 13px;
+                padding: 12px 16px;
+            }
+        }
+    </style>
 </head>
-
-
 
 <body>
 
@@ -513,527 +745,527 @@ footer {
         🛠️ TEMPLATE PREVIEW — This is how your Remodeling site will look inside Contractor Arsenal
     </div>
 
-   <!-- Navigation -->
-<nav>
-    <div class="nav-content">
-        <span class="logo-text">Elite Construction</span>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#process">Process</a></li>
-            <li><a href="#reviews">Reviews</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="nav-right">
-            <a href="tel:2065551234" class="phone">(206) 555-1234</a>
-            <a href="#contact" class="btn">Get Quote</a>
-        </div>
-    </div>
-</nav>
-
-<!-- Hero -->
-<section class="hero" id="home">
-    <div class="hero-content">
-        <span class="hero-badge">Trusted Seattle Builder</span>
-        <h1>Building Excellence, <span class="highlight">Creating Legacy</span></h1>
-        <p>Transform your vision into reality with expert craftsmanship, uncompromising quality, and professional service trusted by Seattle homeowners.</p>
-        <div class="hero-buttons">
-            <a href="#contact" class="btn btn-large">Get Free Estimate</a>
-            <a href="#services" class="btn btn-outline btn-large">View Services</a>
-        </div>
-    </div>
-</section>
-
-<!-- Stats -->
-<div class="stats">
-    <div class="stats-grid">
-        <div>
-            <span class="stat-number">20+</span>
-            <span class="stat-label">Years Experience</span>
-        </div>
-        <div>
-            <span class="stat-number">500+</span>
-            <span class="stat-label">Projects Completed</span>
-        </div>
-        <div>
-            <span class="stat-number">98%</span>
-            <span class="stat-label">Client Satisfaction</span>
-        </div>
-        <div>
-            <span class="stat-number">5-Year</span>
-            <span class="stat-label">Warranty</span>
-        </div>
-    </div>
-</div>
-
-<!-- About -->
-<section class="about" id="about">
-    <div class="container">
-        <div class="about-grid">
-            <div class="about-content">
-                <div class="section-tag">About Us</div>
-                <h2 class="section-title">Seattle's Most Trusted Construction Company</h2>
-                <h3>Building Dreams with Quality & Integrity</h3>
-                <p>At Elite Construction, we're more than just builders—we're craftsmen dedicated to transforming Seattle homes with premium quality and unwavering commitment. Our team brings over two decades of experience to every project.</p>
-                <p>Licensed, bonded, and insured, we pride ourselves on delivering exceptional results that stand the test of time.</p>
-                
-                <div class="about-features">
-                    <div class="about-feature">
-                        <div class="about-feature-icon">✓</div>
-                        <div>
-                            <h4>Licensed & Insured</h4>
-                            <p>Full coverage on every job</p>
-                        </div>
-                    </div>
-                    <div class="about-feature">
-                        <div class="about-feature-icon">⭐</div>
-                        <div>
-                            <h4>Quality Guarantee</h4>
-                            <p>5-year workmanship warranty</p>
-                        </div>
-                    </div>
-                    <div class="about-feature">
-                        <div class="about-feature-icon">👥</div>
-                        <div>
-                            <h4>Expert Team</h4>
-                            <p>Master craftsmen + designers</p>
-                        </div>
-                    </div>
-                    <div class="about-feature">
-                        <div class="about-feature-icon">🏆</div>
-                        <div>
-                            <h4>Award Winning</h4>
-                            <p>Recognized for excellence</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="about-image">
-                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6938bf8ffb91d08f234bd1ee.png" alt="Professional Construction Team" loading="lazy">
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Services -->
-<section class="services" id="services">
-    <div class="container">
-        <div class="section-header center">
-            <div class="section-tag">What We Do</div>
-            <h2 class="section-title">Comprehensive Remodeling Services</h2>
-            <p class="section-subtitle">From kitchens to full home construction—built with precision, quality, and trust.</p>
-        </div>
-
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">🔧</div>
-                <h3>Kitchen Remodeling</h3>
-                <p>High-end kitchen transformations with premium finishes.</p>
-                <ul class="service-list">
-                    <li>Custom cabinetry</li>
-                    <li>Countertop installation</li>
-                    <li>Open-concept redesign</li>
-                    <li>Tile backsplash</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">🚿</div>
-                <h3>Bathroom Renovation</h3>
-                <p>Create your luxury spa-like retreat at home.</p>
-                <ul class="service-list">
-                    <li>Walk-in showers</li>
-                    <li>Tile installation</li>
-                    <li>Vanity upgrades</li>
-                    <li>Complete redesign</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">🏠</div>
-                <h3>Home Additions</h3>
-                <p>Expand your living space seamlessly.</p>
-                <ul class="service-list">
-                    <li>Room additions</li>
-                    <li>Second-story builds</li>
-                    <li>ADU construction</li>
-                    <li>Structural upgrades</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">🎨</div>
-                <h3>Interior Finishes</h3>
-                <p>Premium finishing touches that elevate your home.</p>
-                <ul class="service-list">
-                    <li>Crown molding</li>
-                    <li>Baseboards & trim</li>
-                    <li>Built-ins</li>
-                    <li>Carpentry</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">🪟</div>
-                <h3>Windows & Doors</h3>
-                <p>Energy-efficient installs with clean craftsmanship.</p>
-                <ul class="service-list">
-                    <li>Window replacement</li>
-                    <li>Entry doors</li>
-                    <li>Sliding doors</li>
-                    <li>Weatherproofing</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">🏢</div>
-                <h3>Commercial Remodeling</h3>
-                <p>Retail, office, and tenant improvement projects.</p>
-                <ul class="service-list">
-                    <li>Office buildouts</li>
-                    <li>Retail upgrades</li>
-                    <li>ADA compliance</li>
-                    <li>Interior refresh</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Portfolio -->
-<section class="portfolio" id="portfolio">
-    <div class="container">
-        <div class="section-header center">
-            <div class="section-tag">Our Work</div>
-            <h2 class="section-title">Recent Remodeling Projects</h2>
-            <p class="section-subtitle">Real projects. Real craftsmanship.</p>
-        </div>
-
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6938bf8ffb91d08f234bd1ee.png" loading="lazy">
-                <div class="portfolio-overlay">
-                    <h3>Custom Home Build</h3>
-                    <p>Complete build from foundation to finish.</p>
-                </div>
-            </div>
-
-            <div class="portfolio-item">
-                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6938bf88daae413db89d134d.png" loading="lazy">
-                <div class="portfolio-overlay">
-                    <h3>Kitchen Remodel</h3>
-                    <p>Modern luxury transformation.</p>
-                </div>
-            </div>
-
-            <div class="portfolio-item">
-                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6938bf82daae4113979d12de.png" loading="lazy">
-                <div class="portfolio-overlay">
-                    <h3>Bathroom Renovation</h3>
-                    <p>High-end spa build.</p>
-                </div>
-            </div>
-
-            <div class="portfolio-item">
-                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6938bf7dee2e6690a8b35697.png" loading="lazy">
-                <div class="portfolio-overlay">
-                    <h3>Home Addition</h3>
-                    <p>Seamless second-story extension.</p>
-                </div>
-            </div>
-
-            <div class="portfolio-item">
-                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6938bf8ffb91d08f234bd1ee.png" loading="lazy">
-                <div class="portfolio-overlay">
-                    <h3>Interior Finish</h3>
-                    <p>Custom trim & woodwork.</p>
-                </div>
-            </div>
-
-            <div class="portfolio-item">
-                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6938bf88daae413db89d134d.png" loading="lazy">
-                <div class="portfolio-overlay">
-                    <h3>Commercial Buildout</h3>
-                    <p>Office + retail renovation.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Service Areas -->
-<section class="service-areas">
-    <div class="container">
-        <div class="section-header center">
-            <div class="section-tag">Service Areas</div>
-            <h2 class="section-title">Proudly Serving King County</h2>
-            <p class="section-subtitle">Local craftsmanship. Seattle-built quality.</p>
-        </div>
-
-        <div class="areas-grid">
-            <div class="area-item"><h4>Seattle</h4></div>
-            <div class="area-item"><h4>Bellevue</h4></div>
-            <div class="area-item"><h4>Redmond</h4></div>
-            <div class="area-item"><h4>Kirkland</h4></div>
-            <div class="area-item"><h4>Renton</h4></div>
-            <div class="area-item"><h4>Federal Way</h4></div>
-            <div class="area-item"><h4>Sammamish</h4></div>
-            <div class="area-item"><h4>Kent</h4></div>
-        </div>
-    </div>
-</section>
-
-<!-- Why Choose Us -->
-<section class="why-choose">
-    <div class="container">
-        <div class="section-header center">
-            <div class="section-tag">Why Choose Us</div>
-            <h2 class="section-title">What Sets Us Apart</h2>
-            <p class="section-subtitle">Homeowners choose us for a reason.</p>
-        </div>
-
-        <div class="why-grid">
-            <div class="why-item">
-                <div class="why-icon">🏆</div>
-                <h3>20+ Years Experience</h3>
-                <p>Decades of trusted results.</p>
-            </div>
-
-            <div class="why-item">
-                <div class="why-icon">⭐</div>
-                <h3>Premium Craftsmanship</h3>
-                <p>Only top materials + skilled crews.</p>
-            </div>
-
-            <div class="why-item">
-                <div class="why-icon">⏰</div>
-                <h3>Always On Time</h3>
-                <p>Predictable timelines. Clear updates.</p>
-            </div>
-
-            <div class="why-item">
-                <div class="why-icon">🛡️</div>
-                <h3>5-Year Warranty</h3>
-                <p>Your investment is protected.</p>
-            </div>
-
-            <div class="why-item">
-                <div class="why-icon">💰</div>
-                <h3>Transparent Pricing</h3>
-                <p>No hidden fees. No surprises.</p>
-            </div>
-
-            <div class="why-item">
-                <div class="why-icon">✓</div>
-                <h3>Licensed & Insured</h3>
-                <p>Approved and verified in WA.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Process -->
-<section class="process" id="process">
-    <div class="container">
-        <div class="section-header center">
-            <div class="section-tag">How It Works</div>
-            <h2 class="section-title">A Simple 4-Step Process</h2>
-            <p class="section-subtitle">From concept to completion.</p>
-        </div>
-
-        <div class="process-steps">
-            <div class="step">
-                <div class="step-number">1</div>
-                <h3>Consultation</h3>
-                <p>We discuss your vision & goals.</p>
-            </div>
-
-            <div class="step">
-                <div class="step-number">2</div>
-                <h3>Design + Planning</h3>
-                <p>We create layouts, selections & timeline.</p>
-            </div>
-
-            <div class="step">
-                <div class="step-number">3</div>
-                <h3>Construction</h3>
-                <p>Our licensed team builds with precision.</p>
-            </div>
-
-            <div class="step">
-                <div class="step-number">4</div>
-                <h3>Final Walkthrough</h3>
-                <p>We inspect together + activate warranty.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Testimonials -->
-<section class="testimonials" id="reviews">
-    <div class="container">
-        <div class="section-header center">
-            <div class="section-tag">Reviews</div>
-            <h2 class="section-title">What Clients Say</h2>
-        </div>
-
-        <div class="testimonials-grid">
-            <div class="testimonial">
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"They transformed our kitchen beyond what we imagined. The detail is insane."</p>
-                <div class="author">
-                    <div class="author-avatar">JD</div>
-                    <div class="author-info">
-                        <h4>John D.</h4>
-                        <p>Seattle, WA</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial">
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"Best contractors we've ever hired. Transparent and reliable."</p>
-                <div class="author">
-                    <div class="author-avatar">SM</div>
-                    <div class="author-info">
-                        <h4>Sarah M.</h4>
-                        <p>Bellevue, WA</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial">
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"Five-star work on our bathroom. We recommend them to everyone."</p>
-                <div class="author">
-                    <div class="author-avatar">MR</div>
-                    <div class="author-info">
-                        <h4>Mike R.</h4>
-                        <p>Kirkland, WA</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq">
-    <div class="container">
-        <div class="section-header center">
-            <div class="section-tag">FAQ</div>
-            <h2 class="section-title">Frequently Asked Questions</h2>
-        </div>
-
-        <div class="faq-list">
-            <div class="faq-item">
-                <h3>Are you licensed?</h3>
-                <p>Yes — fully licensed, bonded & insured.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>Do you handle design?</h3>
-                <p>Yes — we provide full design support for most remodels.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>How fast can you start?</h3>
-                <p>Most projects begin within 2–4 weeks after approval.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- CTA -->
-<section class="cta" id="contact">
-    <div class="container">
-        <h2>Ready to Start Your Project?</h2>
-        <p>Request your free estimate today.</p>
-
-        <div class="contact-form-container">
-            <form class="contact-form">
-                <div class="form-row">
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Name *" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" placeholder="Phone Number *" required>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <input type="email" placeholder="Email Address *" required>
-                    </div>
-                    <div class="form-group">
-                        <select required>
-                            <option value="">Select Service *</option>
-                            <option>Kitchen Remodeling</option>
-                            <option>Bathroom Renovation</option>
-                            <option>Home Addition</option>
-                            <option>Custom Home Build</option>
-                            <option>Other</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <textarea rows="4" placeholder="Tell us about your project..."></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-large form-submit">Get Free Estimate</button>
-                <p class="form-note">Or call us now at <a href="tel:2065551234">(206) 555-1234</a></p>
-            </form>
-        </div>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer>
-    <div class="footer-main">
-        <div class="footer-about">
-            <h3>ELITE CONSTRUCTION</h3>
-            <p>Seattle’s premier remodeling and construction company.</p>
-            <p><strong>Phone:</strong> (206) 555-1234</p>
-            <p><strong>Email:</strong> info@eliteconstruction.com</p>
-        </div>
-
-        <div class="footer-section">
-            <h4>Quick Links</h4>
-            <ul>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <span class="logo-text">Elite Construction</span>
+            <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Projects</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#process">Process</a></li>
                 <li><a href="#reviews">Reviews</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="nav-right">
+                <a href="tel:2065551234" class="phone">(206) 555-1234</a>
+                <a href="#contact" class="btn">Get Quote</a>
+            </div>
         </div>
+    </nav>
 
-        <div class="footer-section">
-            <h4>Services</h4>
-            <ul>
-                <li><a href="#services">Kitchen Remodeling</a></li>
-                <li><a href="#services">Bathroom Renovation</a></li>
-                <li><a href="#services">Home Additions</a></li>
-                <li><a href="#services">Commercial Remodeling</a></li>
-            </ul>
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="hero-badge">Trusted Seattle Builder</span>
+            <h1>Building Excellence, <span class="highlight">Creating Legacy</span></h1>
+            <p>Transform your vision into reality with expert craftsmanship, uncompromising quality, and professional service trusted by Seattle homeowners.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-large">Get Free Estimate</a>
+                <a href="#services" class="btn btn-outline btn-large">View Services</a>
+            </div>
         </div>
+    </section>
 
-        <div class="footer-section">
-            <h4>Hours</h4>
-            <p>Mon–Fri: 8am–6pm</p>
-            <p>Sat: 9am–4pm</p>
-            <p>Sun: Closed</p>
+    <!-- Stats -->
+    <div class="stats">
+        <div class="stats-grid">
+            <div>
+                <span class="stat-number">20+</span>
+                <span class="stat-label">Years Experience</span>
+            </div>
+            <div>
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Projects Completed</span>
+            </div>
+            <div>
+                <span class="stat-number">98%</span>
+                <span class="stat-label">Client Satisfaction</span>
+            </div>
+            <div>
+                <span class="stat-number">5-Year</span>
+                <span class="stat-label">Warranty</span>
+            </div>
         </div>
     </div>
 
-    <div class="footer-bottom">
-        <p>&copy; 2025 Elite Construction. All rights reserved.</p>
-        <p>Licensed • Bonded • Insured</p>
-    </div>
-</footer>
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <div class="section-tag">About Us</div>
+                    <h2 class="section-title">Seattle's Most Trusted Construction Company</h2>
+                    <h3>Building Dreams with Quality & Integrity</h3>
+                    <p>At Elite Construction, we're more than just builders—we're craftsmen dedicated to transforming Seattle homes with premium quality and unwavering commitment. Our team brings over two decades of experience to every project.</p>
+                    <p>Licensed, bonded, and insured, we pride ourselves on delivering exceptional results that stand the test of time.</p>
+                    
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="about-feature-icon">✓</div>
+                            <div>
+                                <h4>Licensed & Insured</h4>
+                                <p>Full coverage on every job</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">⭐</div>
+                            <div>
+                                <h4>Quality Guarantee</h4>
+                                <p>5-year workmanship warranty</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">👥</div>
+                            <div>
+                                <h4>Expert Team</h4>
+                                <p>Master craftsmen + designers</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">🏆</div>
+                            <div>
+                                <h4>Award Winning</h4>
+                                <p>Recognized for excellence</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-image">
+                    <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6938bf8ffb91d08f234bd1ee.png" alt="Professional Construction Team" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-tag">What We Do</div>
+                <h2 class="section-title">Comprehensive Remodeling Services</h2>
+                <p class="section-subtitle">From kitchens to full home construction—built with precision, quality, and trust.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Kitchen Remodeling</h3>
+                    <p>High-end kitchen transformations with premium finishes.</p>
+                    <ul class="service-list">
+                        <li>Custom cabinetry</li>
+                        <li>Countertop installation</li>
+                        <li>Open-concept redesign</li>
+                        <li>Tile backsplash</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🚿</div>
+                    <h3>Bathroom Renovation</h3>
+                    <p>Create your luxury spa-like retreat at home.</p>
+                    <ul class="service-list">
+                        <li>Walk-in showers</li>
+                        <li>Tile installation</li>
+                        <li>Vanity upgrades</li>
+                        <li>Complete redesign</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Home Additions</h3>
+                    <p>Expand your living space seamlessly.</p>
+                    <ul class="service-list">
+                        <li>Room additions</li>
+                        <li>Second-story builds</li>
+                        <li>ADU construction</li>
+                        <li>Structural upgrades</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Interior Finishes</h3>
+                    <p>Premium finishing touches that elevate your home.</p>
+                    <ul class="service-list">
+                        <li>Crown molding</li>
+                        <li>Baseboards & trim</li>
+                        <li>Built-ins</li>
+                        <li>Carpentry</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🪟</div>
+                    <h3>Windows & Doors</h3>
+                    <p>Energy-efficient installs with clean craftsmanship.</p>
+                    <ul class="service-list">
+                        <li>Window replacement</li>
+                        <li>Entry doors</li>
+                        <li>Sliding doors</li>
+                        <li>Weatherproofing</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Commercial Remodeling</h3>
+                    <p>Retail, office, and tenant improvement projects.</p>
+                    <ul class="service-list">
+                        <li>Office buildouts</li>
+                        <li>Retail upgrades</li>
+                        <li>ADA compliance</li>
+                        <li>Interior refresh</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-tag">Our Work</div>
+                <h2 class="section-title">Recent Remodeling Projects</h2>
+                <p class="section-subtitle">Real projects. Real craftsmanship.</p>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6938bf8ffb91d08f234bd1ee.png" loading="lazy" alt="Custom Home Build">
+                    <div class="portfolio-overlay">
+                        <h3>Custom Home Build</h3>
+                        <p>Complete build from foundation to finish.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6938bf88daae413db89d134d.png" loading="lazy" alt="Kitchen Remodel">
+                    <div class="portfolio-overlay">
+                        <h3>Kitchen Remodel</h3>
+                        <p>Modern luxury transformation.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6938bf82daae4113979d12de.png" loading="lazy" alt="Bathroom Renovation">
+                    <div class="portfolio-overlay">
+                        <h3>Bathroom Renovation</h3>
+                        <p>High-end spa build.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6938bf7dee2e6690a8b35697.png" loading="lazy" alt="Home Addition">
+                    <div class="portfolio-overlay">
+                        <h3>Home Addition</h3>
+                        <p>Seamless second-story extension.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6938bf8ffb91d08f234bd1ee.png" loading="lazy" alt="Interior Finish">
+                    <div class="portfolio-overlay">
+                        <h3>Interior Finish</h3>
+                        <p>Custom trim & woodwork.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6938bf88daae413db89d134d.png" loading="lazy" alt="Commercial Buildout">
+                    <div class="portfolio-overlay">
+                        <h3>Commercial Buildout</h3>
+                        <p>Office + retail renovation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="service-areas">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-tag">Service Areas</div>
+                <h2 class="section-title">Proudly Serving King County</h2>
+                <p class="section-subtitle">Local craftsmanship. Seattle-built quality.</p>
+            </div>
+
+            <div class="areas-grid">
+                <div class="area-item"><h4>Seattle</h4></div>
+                <div class="area-item"><h4>Bellevue</h4></div>
+                <div class="area-item"><h4>Redmond</h4></div>
+                <div class="area-item"><h4>Kirkland</h4></div>
+                <div class="area-item"><h4>Renton</h4></div>
+                <div class="area-item"><h4>Federal Way</h4></div>
+                <div class="area-item"><h4>Sammamish</h4></div>
+                <div class="area-item"><h4>Kent</h4></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-tag">Why Choose Us</div>
+                <h2 class="section-title">What Sets Us Apart</h2>
+                <p class="section-subtitle">Homeowners choose us for a reason.</p>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-item">
+                    <div class="why-icon">🏆</div>
+                    <h3>20+ Years Experience</h3>
+                    <p>Decades of trusted results.</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">⭐</div>
+                    <h3>Premium Craftsmanship</h3>
+                    <p>Only top materials + skilled crews.</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">⏰</div>
+                    <h3>Always On Time</h3>
+                    <p>Predictable timelines. Clear updates.</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">🛡️</div>
+                    <h3>5-Year Warranty</h3>
+                    <p>Your investment is protected.</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">💰</div>
+                    <h3>Transparent Pricing</h3>
+                    <p>No hidden fees. No surprises.</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">✓</div>
+                    <h3>Licensed & Insured</h3>
+                    <p>Approved and verified in WA.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-tag">How It Works</div>
+                <h2 class="section-title">A Simple 4-Step Process</h2>
+                <p class="section-subtitle">From concept to completion.</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Consultation</h3>
+                    <p>We discuss your vision & goals.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Design + Planning</h3>
+                    <p>We create layouts, selections & timeline.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Construction</h3>
+                    <p>Our licensed team builds with precision.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Final Walkthrough</h3>
+                    <p>We inspect together + activate warranty.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="reviews">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-tag">Reviews</div>
+                <h2 class="section-title">What Clients Say</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"They transformed our kitchen beyond what we imagined. The detail is insane."</p>
+                    <div class="author">
+                        <div class="author-avatar">JD</div>
+                        <div class="author-info">
+                            <h4>John D.</h4>
+                            <p>Seattle, WA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Best contractors we've ever hired. Transparent and reliable."</p>
+                    <div class="author">
+                        <div class="author-avatar">SM</div>
+                        <div class="author-info">
+                            <h4>Sarah M.</h4>
+                            <p>Bellevue, WA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Five-star work on our bathroom. We recommend them to everyone."</p>
+                    <div class="author">
+                        <div class="author-avatar">MR</div>
+                        <div class="author-info">
+                            <h4>Mike R.</h4>
+                            <p>Kirkland, WA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-tag">FAQ</div>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>Are you licensed?</h3>
+                    <p>Yes — fully licensed, bonded & insured.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Do you handle design?</h3>
+                    <p>Yes — we provide full design support for most remodels.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How fast can you start?</h3>
+                    <p>Most projects begin within 2–4 weeks after approval.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Request your free estimate today.</p>
+
+            <div class="contact-form-container">
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number *" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="email" placeholder="Email Address *" required>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Select Service *</option>
+                                <option>Kitchen Remodeling</option>
+                                <option>Bathroom Renovation</option>
+                                <option>Home Addition</option>
+                                <option>Custom Home Build</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea rows="4" placeholder="Tell us about your project..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-large form-submit">Get Free Estimate</button>
+                    <p class="form-note">Or call us now at <a href="tel:2065551234">(206) 555-1234</a></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-main">
+            <div class="footer-about">
+                <h3>ELITE CONSTRUCTION</h3>
+                <p>Seattle's premier remodeling and construction company.</p>
+                <p><strong>Phone:</strong> (206) 555-1234</p>
+                <p><strong>Email:</strong> info@eliteconstruction.com</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Projects</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Kitchen Remodeling</a></li>
+                    <li><a href="#services">Bathroom Renovation</a></li>
+                    <li><a href="#services">Home Additions</a></li>
+                    <li><a href="#services">Commercial Remodeling</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Hours</h4>
+                <p>Mon–Fri: 8am–6pm</p>
+                <p>Sat: 9am–4pm</p>
+                <p>Sun: Closed</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Elite Construction. All rights reserved.</p>
+            <p>Licensed • Bonded • Insured</p>
+        </div>
+    </footer>
 
     <!-- FLOATING CTA BUTTONS -->
     <div class="cta-floating">
