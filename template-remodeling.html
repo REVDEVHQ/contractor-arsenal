@@ -3,27 +3,603 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Construction & Remodeling Template - Preview</title>
+    <title>Pro Remodeling Template - Preview</title>
+
+    <!-- PREVIEW PAGE GLOBAL STYLES -->
     <style>
-        body { margin: 0; padding: 20px; background: #f5f5f5; font-family: system-ui; }
-        .preview-notice { background: #2563eb; color: white; padding: 15px; text-align: center; font-weight: 700; margin-bottom: 20px; border-radius: 8px; }
-        .template-wrapper { max-width: 1400px; margin: 0 auto; background: white; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-        iframe { width: 100%; height: calc(100vh - 120px); border: none; }
-        .cta-bar { background: #000; color: white; padding: 20px; text-align: center; }
-        .cta-bar a { background: linear-gradient(135deg, #FF3B30, #FF9500); color: white; padding: 15px 40px; border-radius: 8px; text-decoration: none; font-weight: 700; display: inline-block; margin: 10px; }
+        body {
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
+            font-family: system-ui;
+        }
+
+        .preview-notice {
+            background: #2563EB;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 700;
+            border-bottom: 3px solid rgba(0,0,0,0.15);
+            font-size: 18px;
+        }
+
+        /* FLOATING TEMPLATE CTA BUTTONS */
+        .cta-floating {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 99999;
+        }
+
+        .cta-main {
+            background: linear-gradient(135deg, #FF3B30, #FF9500);
+            padding: 14px 26px;
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            font-size: 15px;
+        }
+
+        .cta-secondary {
+            background: rgba(0,0,0,0.85);
+            padding: 12px 20px;
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.4);
+            font-size: 14px;
+        }
     </style>
+
+    <!-- INSERT ALL YOUR REMODELING TEMPLATE'S ORIGINAL CSS BELOW -->
+    <!-- (Your entire big CSS block goes here unchanged) -->
 </head>
+
 <body>
+
+    <!-- PREVIEW BANNER -->
     <div class="preview-notice">
-        🔨 PREVIEW MODE - Construction & Remodeling Template - This is how your site will look
+        🛠️ TEMPLATE PREVIEW — This is how your Remodeling site will look inside Contractor Arsenal
     </div>
-    <div class="template-wrapper">
-        <iframe src="https://eliteconstruction.com" title="Remodeling Template Preview"></iframe>
+
+   <!-- Navigation -->
+<nav>
+    <div class="nav-content">
+        <span class="logo-text">Elite Construction</span>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+            <a href="tel:2065551234" class="phone">(206) 555-1234</a>
+            <a href="#contact" class="btn">Get Quote</a>
+        </div>
     </div>
-    <div class="cta-bar">
-        <h2 style="margin-bottom: 15px;">Ready to Use This Template?</h2>
-        <a href="https://buy.stripe.com/dRm9AT9oXfZVfeR7Qq9bO0B">Get Started - $29.99/mo</a>
-        <a href="templates.html" style="background: transparent; border: 2px solid white;">← Back to Templates</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <span class="hero-badge">Trusted Seattle Builder</span>
+        <h1>Building Excellence, <span class="highlight">Creating Legacy</span></h1>
+        <p>Transform your vision into reality with expert craftsmanship, uncompromising quality, and professional service trusted by Seattle homeowners.</p>
+        <div class="hero-buttons">
+            <a href="#contact" class="btn btn-large">Get Free Estimate</a>
+            <a href="#services" class="btn btn-outline btn-large">View Services</a>
+        </div>
     </div>
+</section>
+
+<!-- Stats -->
+<div class="stats">
+    <div class="stats-grid">
+        <div>
+            <span class="stat-number">20+</span>
+            <span class="stat-label">Years Experience</span>
+        </div>
+        <div>
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Projects Completed</span>
+        </div>
+        <div>
+            <span class="stat-number">98%</span>
+            <span class="stat-label">Client Satisfaction</span>
+        </div>
+        <div>
+            <span class="stat-number">5-Year</span>
+            <span class="stat-label">Warranty</span>
+        </div>
+    </div>
+</div>
+
+<!-- About -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-content">
+                <div class="section-tag">About Us</div>
+                <h2 class="section-title">Seattle's Most Trusted Construction Company</h2>
+                <h3>Building Dreams with Quality & Integrity</h3>
+                <p>At Elite Construction, we're more than just builders—we're craftsmen dedicated to transforming Seattle homes with premium quality and unwavering commitment. Our team brings over two decades of experience to every project.</p>
+                <p>Licensed, bonded, and insured, we pride ourselves on delivering exceptional results that stand the test of time.</p>
+                
+                <div class="about-features">
+                    <div class="about-feature">
+                        <div class="about-feature-icon">✓</div>
+                        <div>
+                            <h4>Licensed & Insured</h4>
+                            <p>Full coverage on every job</p>
+                        </div>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">⭐</div>
+                        <div>
+                            <h4>Quality Guarantee</h4>
+                            <p>5-year workmanship warranty</p>
+                        </div>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">👥</div>
+                        <div>
+                            <h4>Expert Team</h4>
+                            <p>Master craftsmen + designers</p>
+                        </div>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">🏆</div>
+                        <div>
+                            <h4>Award Winning</h4>
+                            <p>Recognized for excellence</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-image">
+                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6938bf8ffb91d08f234bd1ee.png" alt="Professional Construction Team" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services -->
+<section class="services" id="services">
+    <div class="container">
+        <div class="section-header center">
+            <div class="section-tag">What We Do</div>
+            <h2 class="section-title">Comprehensive Remodeling Services</h2>
+            <p class="section-subtitle">From kitchens to full home construction—built with precision, quality, and trust.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>Kitchen Remodeling</h3>
+                <p>High-end kitchen transformations with premium finishes.</p>
+                <ul class="service-list">
+                    <li>Custom cabinetry</li>
+                    <li>Countertop installation</li>
+                    <li>Open-concept redesign</li>
+                    <li>Tile backsplash</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🚿</div>
+                <h3>Bathroom Renovation</h3>
+                <p>Create your luxury spa-like retreat at home.</p>
+                <ul class="service-list">
+                    <li>Walk-in showers</li>
+                    <li>Tile installation</li>
+                    <li>Vanity upgrades</li>
+                    <li>Complete redesign</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🏠</div>
+                <h3>Home Additions</h3>
+                <p>Expand your living space seamlessly.</p>
+                <ul class="service-list">
+                    <li>Room additions</li>
+                    <li>Second-story builds</li>
+                    <li>ADU construction</li>
+                    <li>Structural upgrades</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>Interior Finishes</h3>
+                <p>Premium finishing touches that elevate your home.</p>
+                <ul class="service-list">
+                    <li>Crown molding</li>
+                    <li>Baseboards & trim</li>
+                    <li>Built-ins</li>
+                    <li>Carpentry</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🪟</div>
+                <h3>Windows & Doors</h3>
+                <p>Energy-efficient installs with clean craftsmanship.</p>
+                <ul class="service-list">
+                    <li>Window replacement</li>
+                    <li>Entry doors</li>
+                    <li>Sliding doors</li>
+                    <li>Weatherproofing</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h3>Commercial Remodeling</h3>
+                <p>Retail, office, and tenant improvement projects.</p>
+                <ul class="service-list">
+                    <li>Office buildouts</li>
+                    <li>Retail upgrades</li>
+                    <li>ADA compliance</li>
+                    <li>Interior refresh</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio -->
+<section class="portfolio" id="portfolio">
+    <div class="container">
+        <div class="section-header center">
+            <div class="section-tag">Our Work</div>
+            <h2 class="section-title">Recent Remodeling Projects</h2>
+            <p class="section-subtitle">Real projects. Real craftsmanship.</p>
+        </div>
+
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6938bf8ffb91d08f234bd1ee.png" loading="lazy">
+                <div class="portfolio-overlay">
+                    <h3>Custom Home Build</h3>
+                    <p>Complete build from foundation to finish.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6938bf88daae413db89d134d.png" loading="lazy">
+                <div class="portfolio-overlay">
+                    <h3>Kitchen Remodel</h3>
+                    <p>Modern luxury transformation.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6938bf82daae4113979d12de.png" loading="lazy">
+                <div class="portfolio-overlay">
+                    <h3>Bathroom Renovation</h3>
+                    <p>High-end spa build.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6938bf7dee2e6690a8b35697.png" loading="lazy">
+                <div class="portfolio-overlay">
+                    <h3>Home Addition</h3>
+                    <p>Seamless second-story extension.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6938bf8ffb91d08f234bd1ee.png" loading="lazy">
+                <div class="portfolio-overlay">
+                    <h3>Interior Finish</h3>
+                    <p>Custom trim & woodwork.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6938bf88daae413db89d134d.png" loading="lazy">
+                <div class="portfolio-overlay">
+                    <h3>Commercial Buildout</h3>
+                    <p>Office + retail renovation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Service Areas -->
+<section class="service-areas">
+    <div class="container">
+        <div class="section-header center">
+            <div class="section-tag">Service Areas</div>
+            <h2 class="section-title">Proudly Serving King County</h2>
+            <p class="section-subtitle">Local craftsmanship. Seattle-built quality.</p>
+        </div>
+
+        <div class="areas-grid">
+            <div class="area-item"><h4>Seattle</h4></div>
+            <div class="area-item"><h4>Bellevue</h4></div>
+            <div class="area-item"><h4>Redmond</h4></div>
+            <div class="area-item"><h4>Kirkland</h4></div>
+            <div class="area-item"><h4>Renton</h4></div>
+            <div class="area-item"><h4>Federal Way</h4></div>
+            <div class="area-item"><h4>Sammamish</h4></div>
+            <div class="area-item"><h4>Kent</h4></div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="why-choose">
+    <div class="container">
+        <div class="section-header center">
+            <div class="section-tag">Why Choose Us</div>
+            <h2 class="section-title">What Sets Us Apart</h2>
+            <p class="section-subtitle">Homeowners choose us for a reason.</p>
+        </div>
+
+        <div class="why-grid">
+            <div class="why-item">
+                <div class="why-icon">🏆</div>
+                <h3>20+ Years Experience</h3>
+                <p>Decades of trusted results.</p>
+            </div>
+
+            <div class="why-item">
+                <div class="why-icon">⭐</div>
+                <h3>Premium Craftsmanship</h3>
+                <p>Only top materials + skilled crews.</p>
+            </div>
+
+            <div class="why-item">
+                <div class="why-icon">⏰</div>
+                <h3>Always On Time</h3>
+                <p>Predictable timelines. Clear updates.</p>
+            </div>
+
+            <div class="why-item">
+                <div class="why-icon">🛡️</div>
+                <h3>5-Year Warranty</h3>
+                <p>Your investment is protected.</p>
+            </div>
+
+            <div class="why-item">
+                <div class="why-icon">💰</div>
+                <h3>Transparent Pricing</h3>
+                <p>No hidden fees. No surprises.</p>
+            </div>
+
+            <div class="why-item">
+                <div class="why-icon">✓</div>
+                <h3>Licensed & Insured</h3>
+                <p>Approved and verified in WA.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Process -->
+<section class="process" id="process">
+    <div class="container">
+        <div class="section-header center">
+            <div class="section-tag">How It Works</div>
+            <h2 class="section-title">A Simple 4-Step Process</h2>
+            <p class="section-subtitle">From concept to completion.</p>
+        </div>
+
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Consultation</h3>
+                <p>We discuss your vision & goals.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Design + Planning</h3>
+                <p>We create layouts, selections & timeline.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Construction</h3>
+                <p>Our licensed team builds with precision.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Final Walkthrough</h3>
+                <p>We inspect together + activate warranty.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials" id="reviews">
+    <div class="container">
+        <div class="section-header center">
+            <div class="section-tag">Reviews</div>
+            <h2 class="section-title">What Clients Say</h2>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"They transformed our kitchen beyond what we imagined. The detail is insane."</p>
+                <div class="author">
+                    <div class="author-avatar">JD</div>
+                    <div class="author-info">
+                        <h4>John D.</h4>
+                        <p>Seattle, WA</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Best contractors we've ever hired. Transparent and reliable."</p>
+                <div class="author">
+                    <div class="author-avatar">SM</div>
+                    <div class="author-info">
+                        <h4>Sarah M.</h4>
+                        <p>Bellevue, WA</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Five-star work on our bathroom. We recommend them to everyone."</p>
+                <div class="author">
+                    <div class="author-avatar">MR</div>
+                    <div class="author-info">
+                        <h4>Mike R.</h4>
+                        <p>Kirkland, WA</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+    <div class="container">
+        <div class="section-header center">
+            <div class="section-tag">FAQ</div>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-list">
+            <div class="faq-item">
+                <h3>Are you licensed?</h3>
+                <p>Yes — fully licensed, bonded & insured.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Do you handle design?</h3>
+                <p>Yes — we provide full design support for most remodels.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How fast can you start?</h3>
+                <p>Most projects begin within 2–4 weeks after approval.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+    <div class="container">
+        <h2>Ready to Start Your Project?</h2>
+        <p>Request your free estimate today.</p>
+
+        <div class="contact-form-container">
+            <form class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Phone Number *" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Address *" required>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Select Service *</option>
+                            <option>Kitchen Remodeling</option>
+                            <option>Bathroom Renovation</option>
+                            <option>Home Addition</option>
+                            <option>Custom Home Build</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <textarea rows="4" placeholder="Tell us about your project..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-large form-submit">Get Free Estimate</button>
+                <p class="form-note">Or call us now at <a href="tel:2065551234">(206) 555-1234</a></p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-main">
+        <div class="footer-about">
+            <h3>ELITE CONSTRUCTION</h3>
+            <p>Seattle’s premier remodeling and construction company.</p>
+            <p><strong>Phone:</strong> (206) 555-1234</p>
+            <p><strong>Email:</strong> info@eliteconstruction.com</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Projects</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Services</h4>
+            <ul>
+                <li><a href="#services">Kitchen Remodeling</a></li>
+                <li><a href="#services">Bathroom Renovation</a></li>
+                <li><a href="#services">Home Additions</a></li>
+                <li><a href="#services">Commercial Remodeling</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Hours</h4>
+            <p>Mon–Fri: 8am–6pm</p>
+            <p>Sat: 9am–4pm</p>
+            <p>Sun: Closed</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Elite Construction. All rights reserved.</p>
+        <p>Licensed • Bonded • Insured</p>
+    </div>
+</footer>
+
+    <!-- FLOATING CTA BUTTONS -->
+    <div class="cta-floating">
+        <a href="https://buy.stripe.com/dRm9AT9oXfZVfeR7Qq9bO0B" class="cta-main">
+            Ready to Use This Template – $29.99/mo
+        </a>
+        <a href="templates.html" class="cta-secondary">
+            ← Back to Templates
+        </a>
+    </div>
+
 </body>
 </html>
