@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pro Painting Template - Preview</title>
 
-    <!-- PREVIEW PAGE GLOBAL STYLES -->
     <style>
+        /* PREVIEW PAGE GLOBAL STYLES */
         body {
             margin: 0;
             padding: 0;
             background: #ffffff;
-            font-family: system-ui;
+            font-family: system-ui, -apple-system, sans-serif;
         }
 
         .preview-notice {
@@ -44,6 +44,7 @@
             font-weight: 700;
             box-shadow: 0 6px 20px rgba(0,0,0,0.3);
             font-size: 15px;
+            text-align: center;
         }
 
         .cta-secondary {
@@ -55,188 +56,526 @@
             font-weight: 600;
             border: 1px solid rgba(255,255,255,0.4);
             font-size: 14px;
+            text-align: center;
+        }
+
+        /* PAINTING TEMPLATE CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF3B30;
+            --primary-dark: #D32F2F;
+            --accent: #FF9500;
+            --text-dark: #1a1a1a;
+            --text-muted: #666;
+            --bg-light: #f8f9fa;
+            --border: #e5e7eb;
+        }
+
+        .wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 18px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        .nav a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: white !important;
+            padding: 10px 24px;
+            border-radius: 999px;
+            transition: all 0.2s;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(255, 59, 48, 0.1);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-size: 52px;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-text {
+            font-size: 18px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .badge {
+            background: white;
+            border: 2px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .btn-phone,
+        .btn-estimate {
+            padding: 16px 32px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .btn-phone {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 12px rgba(255, 59, 48, 0.3);
+        }
+
+        .btn-phone:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(255, 59, 48, 0.4);
+        }
+
+        .btn-estimate {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-estimate:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .hero-note {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            border: 2px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .stat-box:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .hero-image-container {
+            position: relative;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-bg {
+            background: var(--bg-light);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 38px;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 50px;
+            letter-spacing: -0.02em;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .service-box {
+            background: white;
+            padding: 32px 24px;
+            border-radius: 12px;
+            border: 2px solid var(--border);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .service-box:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .service-box h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .service-box p {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Process Grid */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .process-step {
+            background: white;
+            padding: 32px 24px;
+            border-radius: 12px;
+            border: 2px solid var(--border);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .process-step:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .step-number {
+            width: 64px;
+            height: 64px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 800;
+            margin: 0 auto 20px;
+        }
+
+        .process-step h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .process-step p {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .gallery-grid img:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        /* Reviews Grid */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .review-box {
+            background: white;
+            padding: 32px 24px;
+            border-radius: 12px;
+            border: 2px solid var(--border);
+            font-size: 16px;
+            color: var(--text-dark);
+            line-height: 1.7;
+            font-style: italic;
+            transition: all 0.3s;
+        }
+
+        .review-box:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 16px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 15px;
+            transition: all 0.2s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(255, 59, 48, 0.1);
+        }
+
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            padding: 16px 32px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .contact-form button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(255, 59, 48, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Floating Call Button */
+        .floating-call {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            z-index: 50;
+            display: none;
+        }
+
+        .floating-call a {
+            background: var(--primary);
+            color: white;
+            padding: 16px 24px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            box-shadow: 0 8px 24px rgba(255, 59, 48, 0.4);
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav {
+                display: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-title {
+                font-size: 36px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .floating-call {
+                display: block;
+            }
+
+            .cta-floating {
+                left: 10px;
+                right: 10px;
+            }
         }
     </style>
-
-    <!-- INSERT ALL YOUR TEMPLATE'S ORIGINAL CSS BELOW -->
-    <!-- (Your entire big CSS block goes here unchanged) -->
 </head>
 
 <body>
 
     <!-- PREVIEW BANNER -->
     <div class="preview-notice">
-        🎨 TEMPLATE PREVIEW — This is how your site will look inside Contractor Arsenal
+        🎨 TEMPLATE PREVIEW — This is how your Painting site will look inside Contractor Arsenal
     </div>
 
-    <header class="header">
-    <div class="header-inner">
-        <div class="logo">EVEREtt PRO PAINTING</div>
-        <nav class="nav">
-            <a href="#services">Services</a>
-            <a href="#process">How It Works</a>
-            <a href="#gallery">Our Work</a>
-            <a href="#contact" class="nav-cta">Free Estimate</a>
-        </nav>
-    </div>
-</header>
-
-<section class="hero">
-    <div class="wrap hero-grid">
-        <div class="hero-content">
-            <div class="hero-tag">Everett • Interior & Exterior Painting</div>
-            <h1 class="hero-title">Premium Painting That Lasts</h1>
-            <p class="hero-text">
-                Professional interior & exterior painting with meticulous prep,
-                smooth finishes, and results you'll love for years.
-            </p>
-
-            <div class="hero-badges">
-                <div class="badge"><span>⭐</span> 5.0 Google Rating</div>
-                <div class="badge"><span>✔</span> Licensed • Bonded • Insured</div>
-                <div class="badge"><span>📍</span> Serving Everett, Seattle & Lynnwood</div>
-            </div>
-
-            <div class="hero-actions">
-                <a href="tel:2061112222" class="btn-phone">📞 Call (206) 111-2222</a>
-                <a href="#contact" class="btn-estimate">Get a Free Estimate</a>
-            </div>
-
-            <div class="hero-note">
-                Most projects scheduled within 5–7 days. No-pressure consultations.
-            </div>
-
-            <div class="hero-stats">
-                <div class="stat-box">
-                    <div class="stat-number">1,200+</div>
-                    <div class="stat-label">Projects Completed</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Years of Experience</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Satisfaction Rate</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">5.0 ★</div>
-                    <div class="stat-label">Average Review</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="hero-image-container">
-            <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6938a6d8169a4241f2fbb4a1.png" class="hero-image" alt="Painting Image">
-        </div>
-    </div>
-</section>
-
-<section id="services" class="section section-bg">
-    <div class="wrap">
-        <h2 class="section-title">Our Painting Services</h2>
-        <div class="services-grid">
-            <div class="service-box">
-                <h3>Interior Painting</h3>
-                <p>Smooth finishes, modern colors, and flawless results.</p>
-            </div>
-            <div class="service-box">
-                <h3>Exterior Painting</h3>
-                <p>Weather-resistant coatings that last for years.</p>
-            </div>
-            <div class="service-box">
-                <h3>Cabinet Refinishing</h3>
-                <p>Factory-grade coatings for a brand-new look.</p>
-            </div>
-            <div class="service-box">
-                <h3>Drywall Repair</h3>
-                <p>Perfect patches, texture match, & seamless blending.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="process" class="section">
-    <div class="wrap">
-        <h2 class="section-title">How It Works</h2>
-        <div class="process-grid">
-            <div class="process-step">
-                <div class="step-number">1</div>
-                <h3>Request Your Estimate</h3>
-                <p>We visit your property or offer a virtual estimate.</p>
-            </div>
-            <div class="process-step">
-                <div class="step-number">2</div>
-                <h3>Choose Your Colors</h3>
-                <p>We help you pick the perfect colors for your home.</p>
-            </div>
-            <div class="process-step">
-                <div class="step-number">3</div>
-                <h3>We Prep & Paint</h3>
-                <p>Meticulous prep, clean work, and premium coatings.</p>
-            </div>
-            <div class="process-step">
-                <div class="step-number">4</div>
-                <h3>Walk-Through & Finish</h3>
-                <p>We ensure everything is perfect before we leave.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="gallery" class="section section-bg">
-    <div class="wrap">
-        <h2 class="section-title">Recent Projects</h2>
-        <div class="gallery-grid">
-            <img src="https://via.placeholder.com/400x300" alt="">
-            <img src="https://via.placeholder.com/400x300" alt="">
-            <img src="https://via.placeholder.com/400x300" alt="">
-            <img src="https://via.placeholder.com/400x300" alt="">
-        </div>
-    </div>
-</section>
-
-<section id="reviews" class="section">
-    <div class="wrap">
-        <h2 class="section-title">What Our Clients Say</h2>
-        <div class="reviews-grid">
-            <div class="review-box">
-                “Amazing results! My home looks brand new again.”
-            </div>
-            <div class="review-box">
-                “Professional team and very high-quality work.”
-            </div>
-            <div class="review-box">
-                “Fast, clean, and the paint job is perfect.”
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="contact" class="section section-bg">
-    <div class="wrap">
-        <h2 class="section-title">Get Your Free Estimate</h2>
-
-        <form class="contact-form">
-            <input type="text" placeholder="Full Name" required>
-            <input type="text" placeholder="Phone Number" required>
-            <input type="email" placeholder="Email Address">
-            <textarea placeholder="Tell us about your project"></textarea>
-            <button type="submit">Request Estimate</button>
-        </form>
-    </div>
-</section>
-
-<footer class="footer">
-    <div class="wrap">
-        <p>© Everett Pro Painting — All Rights Reserved</p>
-    </div>
-</footer>
-
-<div class="floating-call">
-    <a href="tel:2061112222">📞 Call Now</a>
-</div>
-
+    <!-- HEADER -->
     <header class="header">
         <div class="header-inner">
             <div class="logo">Everett Pro Painting</div>
@@ -249,174 +588,171 @@
         </div>
     </header>
 
-    <header class="header">
-    <div class="header-inner">
-        <div class="logo">EVEREtt PRO PAINTING</div>
-        <nav class="nav">
-            <a href="#services">Services</a>
-            <a href="#process">How It Works</a>
-            <a href="#gallery">Our Work</a>
-            <a href="#contact" class="nav-cta">Free Estimate</a>
-        </nav>
-    </div>
-</header>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="wrap hero-grid">
+            <div class="hero-content">
+                <div class="hero-tag">Everett • Interior & Exterior Painting</div>
+                <h1 class="hero-title">Premium Painting That Lasts</h1>
+                <p class="hero-text">
+                    Professional interior & exterior painting with meticulous prep,
+                    smooth finishes, and results you'll love for years.
+                </p>
 
-<section class="hero">
-    <div class="wrap hero-grid">
-        <div class="hero-content">
-            <div class="hero-tag">Everett • Interior & Exterior Painting</div>
-            <h1 class="hero-title">Premium Painting That Lasts</h1>
-            <p class="hero-text">
-                Professional interior & exterior painting with meticulous prep,
-                smooth finishes, and results you'll love for years.
-            </p>
-
-            <div class="hero-badges">
-                <div class="badge"><span>⭐</span> 5.0 Google Rating</div>
-                <div class="badge"><span>✔</span> Licensed • Bonded • Insured</div>
-                <div class="badge"><span>📍</span> Serving Everett, Seattle & Lynnwood</div>
-            </div>
-
-            <div class="hero-actions">
-                <a href="tel:2061112222" class="btn-phone">📞 Call (206) 111-2222</a>
-                <a href="#contact" class="btn-estimate">Get a Free Estimate</a>
-            </div>
-
-            <div class="hero-note">
-                Most projects scheduled within 5–7 days. No-pressure consultations.
-            </div>
-
-            <div class="hero-stats">
-                <div class="stat-box">
-                    <div class="stat-number">1,200+</div>
-                    <div class="stat-label">Projects Completed</div>
+                <div class="hero-badges">
+                    <div class="badge"><span>⭐</span> 5.0 Google Rating</div>
+                    <div class="badge"><span>✔</span> Licensed • Bonded • Insured</div>
+                    <div class="badge"><span>📍</span> Serving Everett, Seattle & Lynnwood</div>
                 </div>
-                <div class="stat-box">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Years of Experience</div>
+
+                <div class="hero-actions">
+                    <a href="tel:2061112222" class="btn-phone">📞 Call (206) 111-2222</a>
+                    <a href="#contact" class="btn-estimate">Get a Free Estimate</a>
                 </div>
-                <div class="stat-box">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Satisfaction Rate</div>
+
+                <div class="hero-note">
+                    Most projects scheduled within 5–7 days. No-pressure consultations.
                 </div>
-                <div class="stat-box">
-                    <div class="stat-number">5.0 ★</div>
-                    <div class="stat-label">Average Review</div>
+
+                <div class="hero-stats">
+                    <div class="stat-box">
+                        <div class="stat-number">1,200+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Years of Experience</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Satisfaction Rate</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">5.0 ★</div>
+                        <div class="stat-label">Average Review</div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="hero-image-container">
-            <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6938a6d8169a4241f2fbb4a1.png" class="hero-image" alt="Painting Image">
-        </div>
-    </div>
-</section>
-
-<section id="services" class="section section-bg">
-    <div class="wrap">
-        <h2 class="section-title">Our Painting Services</h2>
-        <div class="services-grid">
-            <div class="service-box">
-                <h3>Interior Painting</h3>
-                <p>Smooth finishes, modern colors, and flawless results.</p>
-            </div>
-            <div class="service-box">
-                <h3>Exterior Painting</h3>
-                <p>Weather-resistant coatings that last for years.</p>
-            </div>
-            <div class="service-box">
-                <h3>Cabinet Refinishing</h3>
-                <p>Factory-grade coatings for a brand-new look.</p>
-            </div>
-            <div class="service-box">
-                <h3>Drywall Repair</h3>
-                <p>Perfect patches, texture match, & seamless blending.</p>
+            <div class="hero-image-container">
+                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6938a6d8169a4241f2fbb4a1.png" class="hero-image" alt="Painting Image" loading="lazy">
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="process" class="section">
-    <div class="wrap">
-        <h2 class="section-title">How It Works</h2>
-        <div class="process-grid">
-            <div class="process-step">
-                <div class="step-number">1</div>
-                <h3>Request Your Estimate</h3>
-                <p>We visit your property or offer a virtual estimate.</p>
-            </div>
-            <div class="process-step">
-                <div class="step-number">2</div>
-                <h3>Choose Your Colors</h3>
-                <p>We help you pick the perfect colors for your home.</p>
-            </div>
-            <div class="process-step">
-                <div class="step-number">3</div>
-                <h3>We Prep & Paint</h3>
-                <p>Meticulous prep, clean work, and premium coatings.</p>
-            </div>
-            <div class="process-step">
-                <div class="step-number">4</div>
-                <h3>Walk-Through & Finish</h3>
-                <p>We ensure everything is perfect before we leave.</p>
+    <!-- SERVICES -->
+    <section id="services" class="section section-bg">
+        <div class="wrap">
+            <h2 class="section-title">Our Painting Services</h2>
+            <div class="services-grid">
+                <div class="service-box">
+                    <h3>Interior Painting</h3>
+                    <p>Smooth finishes, modern colors, and flawless results.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Exterior Painting</h3>
+                    <p>Weather-resistant coatings that last for years.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Cabinet Refinishing</h3>
+                    <p>Factory-grade coatings for a brand-new look.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Drywall Repair</h3>
+                    <p>Perfect patches, texture match, & seamless blending.</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="gallery" class="section section-bg">
-    <div class="wrap">
-        <h2 class="section-title">Recent Projects</h2>
-        <div class="gallery-grid">
-            <img src="https://via.placeholder.com/400x300" alt="">
-            <img src="https://via.placeholder.com/400x300" alt="">
-            <img src="https://via.placeholder.com/400x300" alt="">
-            <img src="https://via.placeholder.com/400x300" alt="">
+    <!-- PROCESS -->
+    <section id="process" class="section">
+        <div class="wrap">
+            <h2 class="section-title">How It Works</h2>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Request Your Estimate</h3>
+                    <p>We visit your property or offer a virtual estimate.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Choose Your Colors</h3>
+                    <p>We help you pick the perfect colors for your home.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>We Prep & Paint</h3>
+                    <p>Meticulous prep, clean work, and premium coatings.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Walk-Through & Finish</h3>
+                    <p>We ensure everything is perfect before we leave.</p>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="reviews" class="section">
-    <div class="wrap">
-        <h2 class="section-title">What Our Clients Say</h2>
-        <div class="reviews-grid">
-            <div class="review-box">
-                “Amazing results! My home looks brand new again.”
-            </div>
-            <div class="review-box">
-                “Professional team and very high-quality work.”
-            </div>
-            <div class="review-box">
-                “Fast, clean, and the paint job is perfect.”
+    <!-- GALLERY -->
+    <section id="gallery" class="section section-bg">
+        <div class="wrap">
+            <h2 class="section-title">Recent Projects</h2>
+            <div class="gallery-grid">
+                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6938a6d8169a4241f2fbb4a1.png" alt="Painting project" loading="lazy">
+                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6938a6d8169a4241f2fbb4a1.png" alt="Painting project" loading="lazy">
+                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6938a6d8169a4241f2fbb4a1.png" alt="Painting project" loading="lazy">
+                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/6938a6d8169a4241f2fbb4a1.png" alt="Painting project" loading="lazy">
             </div>
         </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews" class="section">
+        <div class="wrap">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="reviews-grid">
+                <div class="review-box">
+                    "Amazing results! My home looks brand new again. The team was professional and respectful throughout the entire process."
+                </div>
+                <div class="review-box">
+                    "Professional team and very high-quality work. They exceeded our expectations and finished on time."
+                </div>
+                <div class="review-box">
+                    "Fast, clean, and the paint job is perfect. Highly recommend for anyone looking for quality painting services."
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section-bg">
+        <div class="wrap">
+            <h2 class="section-title">Get Your Free Estimate</h2>
+
+            <form class="contact-form">
+                <input type="text" placeholder="Full Name" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <input type="email" placeholder="Email Address">
+                <textarea placeholder="Tell us about your project"></textarea>
+                <button type="submit">Request Estimate</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="wrap">
+            <p>&copy; 2025 Everett Pro Painting — All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- FLOATING CALL BUTTON -->
+    <div class="floating-call">
+        <a href="tel:2061112222">📞 Call Now</a>
     </div>
-</section>
 
-<section id="contact" class="section section-bg">
-    <div class="wrap">
-        <h2 class="section-title">Get Your Free Estimate</h2>
-
-        <form class="contact-form">
-            <input type="text" placeholder="Full Name" required>
-            <input type="text" placeholder="Phone Number" required>
-            <input type="email" placeholder="Email Address">
-            <textarea placeholder="Tell us about your project"></textarea>
-            <button type="submit">Request Estimate</button>
-        </form>
-    </div>
-</section>
-
-<footer class="footer">
-    <div class="wrap">
-        <p>© Everett Pro Painting — All Rights Reserved</p>
-    </div>
-</footer>
-
-<div class="floating-call">
-    <a href="tel:2061112222">📞 Call Now</a>
-</div>
-
+    <!-- FLOATING CTA BUTTONS -->
     <div class="cta-floating">
         <a href="https://buy.stripe.com/dRm9AT9oXfZVfeR7Qq9bO0B" class="cta-main">
             Ready to Use This Template – $29.99/mo
