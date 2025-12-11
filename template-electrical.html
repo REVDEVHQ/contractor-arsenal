@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Electrical Services | Licensed Electricians Near You</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --yellow: #FBBF24;
+            --yellow-dark: #F59E0B;
+            --orange: #F97316;
+            --red: #DC2626;
+            --dark: #1a1a1a;
+            --gray: #6b7280;
+            --light-gray: #f3f4f6;
+            --border: #e5e7eb;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--dark);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--yellow);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--yellow);
+        }
+
+        .emergency-phone {
+            background: var(--red);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+            50% { box-shadow: 0 0 0 10px rgba(220, 38, 38, 0); }
+        }
+
+        .btn {
+            background: var(--yellow);
+            color: var(--dark);
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: var(--yellow-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-red {
+            background: var(--red);
+            color: white;
+        }
+
+        .btn-red:hover {
+            background: #B91C1C;
+        }
+
+        .btn-large {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+        }
+
+        /* Hero */
+        .hero {
+            margin-top: 70px;
+            min-height: 90vh;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '⚡';
+            position: absolute;
+            font-size: 35rem;
+            opacity: 0.03;
+            right: -8rem;
+            top: -8rem;
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 20px var(--yellow); }
+            50% { text-shadow: 0 0 40px var(--yellow), 0 0 60px var(--yellow); }
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--yellow), var(--orange));
+            color: var(--dark);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+        }
+
+        .hero .highlight {
+            color: var(--yellow);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 650px;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-features {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .hero-feature {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 2px solid rgba(251, 191, 36, 0.2);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .hero-feature:hover {
+            background: rgba(251, 191, 36, 0.1);
+            border-color: var(--yellow);
+            transform: translateY(-4px);
+        }
+
+        .hero-feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-feature h3 {
+            color: white;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .hero-feature p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Emergency Banner */
+        .emergency-banner {
+            background: var(--red);
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
+
+        .emergency-banner h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .emergency-banner p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .emergency-banner .btn {
+            background: white;
+            color: var(--red);
+            font-size: 1.1rem;
+        }
+
+        /* Stats */
+        .stats {
+            background: var(--yellow);
+            padding: 3rem 2rem;
+        }
+
+        .stats-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--dark);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--dark);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* Section */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-header.center {
+            text-align: center;
+        }
+
+        .section-tag {
+            color: var(--yellow-dark);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-size: 2.75rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--gray);
+            max-width: 700px;
+        }
+
+        .section-header.center .section-subtitle {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Services */
+        .services {
+            background: var(--light-gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 2px solid var(--border);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--yellow), var(--orange));
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            border-color: var(--yellow);
+            box-shadow: 0 8px 24px rgba(251, 191, 36, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--yellow), var(--orange));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .service-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .service-list li {
+            color: var(--gray);
+            font-size: 0.95rem;
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-list li::before {
+            content: '⚡';
+            position: absolute;
+            left: 0;
+            color: var(--yellow-dark);
+            font-weight: bold;
+        }
+
+        /* Safety Section */
+        .safety {
+            background: var(--dark);
+            color: white;
+            padding: 5rem 2rem;
+        }
+
+        .safety-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 3rem auto 0;
+        }
+
+        .safety-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid rgba(251, 191, 36, 0.2);
+            text-align: center;
+        }
+
+        .safety-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--yellow);
+            color: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        .safety-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .safety-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+        }
+
+        /* Why Choose */
+        .why-choose {
+            background: white;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .why-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .why-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(249, 115, 22, 0.2));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        .why-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .why-card p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* Process */
+        .process {
+            background: var(--light-gray);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            position: relative;
+            border: 2px solid var(--border);
+        }
+
+        .step::after {
+            content: '→';
+            position: absolute;
+            right: -1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: var(--yellow);
+            opacity: 0.5;
+        }
+
+        .step:last-child::after {
+            display: none;
+        }
+
+        .step-number {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--yellow), var(--orange));
+            color: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin: 0 auto 1.5rem;
+        }
+
+        .step h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .step p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid var(--border);
+        }
+
+        .stars {
+            color: var(--yellow-dark);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            color: var(--dark);
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            background: var(--yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .author-info h4 {
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 1rem;
+        }
+
+        .author-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* CTA */
+        .cta {
+            background: var(--dark);
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .cta h2 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 3rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #0d0d0d;
+            padding: 4rem 2rem 2rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer h4 {
+            color: var(--yellow);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+
+        footer a:hover {
+            color: var(--yellow);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .services-grid,
+            .why-grid,
+            .safety-grid,
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .process-steps,
+            .hero-features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .services-grid,
+            .why-grid,
+            .safety-grid,
+            .testimonials-grid,
+            .process-steps,
+            .hero-features,
+            .stats-grid,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <span class="logo-text">⚡ Elite Electric</span>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#safety">Safety</a></li>
+                <li><a href="#why">Why Us</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+            </ul>
+            <a href="tel:555-555-0199" class="emergency-phone">
+                🚨 (555) 555-0199
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">⚡ Licensed & Insured Master Electricians</span>
+            <h1>Safe, Reliable <span class="highlight">Electrical Services</span></h1>
+            <p>Expert electrical repair, installation, and upgrades. 24/7 emergency service available. Your safety is our top priority.</p>
+            <div class="hero-buttons">
+                <a href="tel:555-555-0199" class="btn btn-large btn-red">⚡ Emergency Service</a>
+                <a href="#contact" class="btn btn-large">Schedule Appointment</a>
+            </div>
+            <div class="hero-features">
+                <div class="hero-feature">
+                    <div class="hero-feature-icon">🛡️</div>
+                    <h3>Safety First</h3>
+                    <p>Code compliant work</p>
+                </div>
+                <div class="hero-feature">
+                    <div class="hero-feature-icon">⚡</div>
+                    <h3>Fast Service</h3>
+                    <p>Same-day available</p>
+                </div>
+                <div class="hero-feature">
+                    <div class="hero-feature-icon">💰</div>
+                    <h3>Fair Pricing</h3>
+                    <p>Upfront estimates</p>
+                </div>
+                <div class="hero-feature">
+                    <div class="hero-feature-icon">⭐</div>
+                    <h3>Top Rated</h3>
+                    <p>5-star reviews</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Banner -->
+    <div class="emergency-banner">
+        <h3>⚡ ELECTRICAL EMERGENCY? WE'RE HERE 24/7</h3>
+        <p>Power outages? Sparking outlets? Electrical fires? Call now!</p>
+        <a href="tel:555-555-0199" class="btn btn-large">Emergency: (555) 555-0199</a>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+        <div class="stats-grid">
+            <div>
+                <span class="stat-number">25+</span>
+                <span class="stat-label">Years Experience</span>
+            </div>
+            <div>
+                <span class="stat-number">15,000+</span>
+                <span class="stat-label">Projects Completed</span>
+            </div>
+            <div>
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Emergency Service</span>
+            </div>
+            <div>
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Code Compliant</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-tag">What We Do</div>
+                <h2 class="section-title">Complete Electrical Services</h2>
+                <p class="section-subtitle">From simple repairs to complete electrical system upgrades, we handle all your residential and commercial electrical needs.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔌</div>
+                    <h3>Electrical Repairs</h3>
+                    <p>Fast, reliable repairs for all your electrical issues. We diagnose and fix problems right the first time.</p>
+                    <ul class="service-list">
+                        <li>Outlet & switch repair</li>
+                        <li>Circuit breaker issues</li>
+                        <li>Wiring problems</li>
+                        <li>Lighting repairs</li>
+                        <li>Power restoration</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Panel Upgrades</h3>
+                    <p>Upgrade your electrical panel to handle modern power demands safely and efficiently.</p>
+                    <ul class="service-list">
+                        <li>Panel replacement</li>
+                        <li>Service upgrades (100A-400A)</li>
+                        <li>Subpanel installation</li>
+                        <li>Circuit additions</li>
+                        <li>Code compliance updates</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💡</div>
+                    <h3>Lighting Installation</h3>
+                    <p>Professional lighting installation for interior and exterior applications.</p>
+                    <ul class="service-list">
+                        <li>Recessed lighting</li>
+                        <li>Chandelier installation</li>
+                        <li>Outdoor lighting</li>
+                        <li>LED upgrades</li>
+                        <li>Landscape lighting</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔋</div>
+                    <h3>EV Charger Installation</h3>
+                    <p>Expert installation of electric vehicle charging stations for your home or business.</p>
+                    <ul class="service-list">
+                        <li>Level 2 charger installation</li>
+                        <li>Tesla charging stations</li>
+                        <li>Commercial EV charging</li>
+                        <li>Electrical capacity upgrades</li>
+                        <li>Permit & inspection handling</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏡</div>
+                    <h3>Whole Home Rewiring</h3>
+                    <p>Complete electrical system rewiring for older homes to meet modern safety standards.</p>
+                    <ul class="service-list">
+                        <li>Complete rewiring</li>
+                        <li>Aluminum wire replacement</li>
+                        <li>Knob & tube removal</li>
+                        <li>GFCI & AFCI installation</li>
+                        <li>Safety inspections</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚨</div>
+                    <h3>Emergency Service</h3>
+                    <p>24/7 emergency electrical service for urgent issues that can't wait.</p>
+                    <ul class="service-list">
+                        <li>Power outages</li>
+                        <li>Electrical fires</li>
+                        <li>Sparking outlets/panels</li>
+                        <li>Storm damage repair</li>
+                        <li>After-hours service</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Section -->
+    <section class="safety" id="safety">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-tag" style="color: var(--yellow);">Safety First</div>
+                <h2 class="section-title" style="color: white;">Your Safety is Our Priority</h2>
+                <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.8);">We follow strict safety protocols and electrical codes to protect you and your property.</p>
+            </div>
+            <div class="safety-grid">
+                <div class="safety-card">
+                    <div class="safety-icon">📋</div>
+                    <h3>Code Compliant</h3>
+                    <p>All work meets or exceeds national and local electrical codes for maximum safety.</p>
+                </div>
+                <div class="safety-card">
+                    <div class="safety-icon">🔍</div>
+                    <h3>Thorough Inspections</h3>
+                    <p>We inspect all electrical systems to identify potential hazards before they become problems.</p>
+                </div>
+                <div class="safety-card">
+                    <div class="safety-icon">✅</div>
+                    <h3>Quality Materials</h3>
+                    <p>We use only top-rated, UL-listed components and materials for lasting safety and reliability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose" id="why">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-tag">Why Choose Us</div>
+                <h2 class="section-title">Licensed Electricians You Can Trust</h2>
+                <p class="section-subtitle">What sets us apart from other electrical contractors.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">🎓</div>
+                    <h3>Master Electricians</h3>
+                    <p>All our electricians are licensed master electricians with years of experience and continuous training.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">⚡</div>
+                    <h3>Fast Response</h3>
+                    <p>Same-day service available for most jobs. 24/7 emergency service when you need it most.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">💰</div>
+                    <h3>Transparent Pricing</h3>
+                    <p>Upfront, detailed estimates before we start. No hidden fees or surprise charges.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🛡️</div>
+                    <h3>Fully Insured</h3>
+                    <p>Comprehensive insurance coverage and warranties on all parts and labor for your protection.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🏆</div>
+                    <h3>Award-Winning</h3>
+                    <p>Recognized as a top-rated electrical contractor with hundreds of 5-star reviews.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">♻️</div>
+                    <h3>Energy Efficient</h3>
+                    <p>We recommend energy-efficient solutions to help you save money on your electric bills.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-tag">How It Works</div>
+                <h2 class="section-title">Simple, Professional Process</h2>
+                <p class="section-subtitle">From your first call to project completion, we make electrical service easy and stress-free.</p>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Contact Us</h3>
+                    <p>Call or book online. We'll schedule a convenient time, often same-day.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Assessment</h3>
+                    <p>Our electrician inspects the issue and provides a detailed, upfront estimate.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Expert Work</h3>
+                    <p>We complete the work safely and efficiently using quality materials and techniques.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Testing & Warranty</h3>
+                    <p>We test everything thoroughly and provide warranties on all work completed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="reviews">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-tag">Customer Reviews</div>
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-subtitle">Trusted by thousands of homeowners and businesses.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Had a major electrical emergency at midnight. They arrived within 30 minutes and had the power restored quickly. Professional, knowledgeable, and reasonably priced!"</p>
+                    <div class="author">
+                        <div class="author-avatar">TH</div>
+                        <div class="author-info">
+                            <h4>Thomas H.</h4>
+                            <p>Homeowner</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Upgraded our electrical panel and installed a Tesla charger. The team was professional, clean, and the work was perfect. Highly recommend!"</p>
+                    <div class="author">
+                        <div class="author-avatar">KM</div>
+                        <div class="author-info">
+                            <h4>Karen M.</h4>
+                            <p>Homeowner</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Best electricians I've worked with. Fair pricing, excellent communication, and they actually showed up on time. Will use them for all future electrical needs."</p>
+                    <div class="author">
+                        <div class="author-avatar">JL</div>
+                        <div class="author-info">
+                            <h4>James L.</h4>
+                            <p>Business Owner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Need an Electrician Today?</h2>
+            <p>Call now for same-day service or emergency electrical repairs. We're available 24/7.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="tel:555-555-0199" class="btn btn-large btn-red">⚡ Emergency: (555) 555-0199</a>
+                <a href="#contact" class="btn btn-large">Schedule Service</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h4>Elite Electric</h4>
+                <p>Your trusted partner for all electrical needs. Licensed, insured, and ready to serve you 24/7.</p>
+                <p style="margin-top: 1rem;">⚡ (555) 555-0199</p>
+                <p>📧 info@eliteelectric.com</p>
+                <p style="margin-top: 1rem; color: var(--yellow);">License #EC-123456</p>
+            </div>
+            <div>
+                <h4>Services</h4>
+                <a href="#services">Electrical Repairs</a>
+                <a href="#services">Panel Upgrades</a>
+                <a href="#services">Lighting Installation</a>
+                <a href="#services">EV Chargers</a>
+                <a href="#services">Emergency Service</a>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <a href="#why">About Us</a>
+                <a href="#safety">Safety</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#">Financing</a>
+                <a href="#">Careers</a>
+            </div>
+            <div>
+                <h4>Hours</h4>
+                <p>Monday - Friday: 7AM - 8PM</p>
+                <p>Saturday: 8AM - 6PM</p>
+                <p>Sunday: 9AM - 4PM</p>
+                <p style="margin-top: 1rem; color: var(--yellow); font-weight: 700;">⚡ 24/7 Emergency Service</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Elite Electric. All rights reserved. | Licensed & Insured</p>
+        </div>
+    </footer>
+</body>
+</html>
