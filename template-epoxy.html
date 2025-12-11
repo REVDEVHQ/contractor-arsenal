@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Concrete & Coatings | Premium Epoxy Flooring</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --orange: #FF8C00;
+            --orange-dark: #FF6B00;
+            --pink: #FF1493;
+            --purple: #9B30FF;
+            --dark: #1a1a1a;
+            --gray: #6b7280;
+            --light-gray: #f3f4f6;
+            --border: #e5e7eb;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 2px solid transparent;
+            border-image: linear-gradient(90deg, #FF8C00, #FF1493, #9B30FF) 1;
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #FF8C00, #FF1493, #9B30FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--orange);
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #FF8C00 0%, #FF1493 50%, #9B30FF 100%);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 140, 0, 0.4);
+        }
+
+        .btn-large {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+        }
+
+        /* Hero */
+        .hero {
+            margin-top: 70px;
+            min-height: 90vh;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 165, 0, 0.08) 0%, transparent 70%);
+            right: -200px;
+            top: -200px;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(255, 140, 0, 0.15), rgba(255, 20, 147, 0.15));
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            border-image: linear-gradient(135deg, #FF8C00, #FF1493) 1;
+            color: var(--orange);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+        }
+
+        .hero .highlight {
+            color: var(--orange);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 650px;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Stats */
+        .stats {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1a28 50%, #1a1a1a 100%);
+            padding: 3rem 2rem;
+            border-top: 3px solid transparent;
+            border-image: linear-gradient(90deg, #FF8C00, #FF1493, #9B30FF) 1;
+        }
+
+        .stats-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #FF8C00, #FF1493, #9B30FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+        }
+
+        /* Section */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-header.center {
+            text-align: center;
+        }
+
+        .section-tag {
+            color: var(--orange);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-size: 2.75rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--gray);
+            max-width: 700px;
+        }
+
+        .section-header.center .section-subtitle {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Services */
+        .services {
+            background: var(--light-gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--orange);
+            box-shadow: 0 8px 24px rgba(255, 165, 0, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .service-card h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .service-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .service-list li {
+            color: var(--gray);
+            font-size: 0.9rem;
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--orange);
+            font-weight: bold;
+        }
+
+        /* Portfolio */
+        .portfolio {
+            background: white;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 1;
+            cursor: pointer;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* CTA */
+        .cta {
+            background: var(--dark);
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .cta h2 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 3rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #0d0d0d;
+            padding: 4rem 2rem 2rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer h4 {
+            color: white;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+
+        footer a:hover {
+            color: var(--orange);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .services-grid,
+            .portfolio-grid,
+            .stats-grid,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <span class="logo-text">Pro Concrete</span>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="btn">Get Quote</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Trusted Epoxy & Concrete Specialist</span>
+            <h1>Premium Epoxy Flooring, <span class="highlight">Flawless Results</span></h1>
+            <p>Transform your floors with expert epoxy coatings, metallic finishes, and concrete solutions. Professional service with lasting results.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-large">Get Free Estimate</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="stats">
+        <div class="stats-grid">
+            <div>
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Projects Completed</span>
+            </div>
+            <div>
+                <span class="stat-number">12</span>
+                <span class="stat-label">Years Experience</span>
+            </div>
+            <div>
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Satisfaction</span>
+            </div>
+            <div>
+                <span class="stat-number">Lifetime</span>
+                <span class="stat-label">Warranty</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-tag">What We Do</div>
+                <h2 class="section-title">Comprehensive Concrete & Epoxy Services</h2>
+                <p class="section-subtitle">From garage floors to commercial warehouses, we deliver exceptional epoxy and concrete coating results.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Garage Floor Epoxy</h3>
+                    <p>Transform your garage with durable, beautiful epoxy coatings that resist stains, chemicals, and hot tires.</p>
+                    <ul class="service-list">
+                        <li>Epoxy coatings</li>
+                        <li>Polyaspartic topcoats</li>
+                        <li>Decorative flake systems</li>
+                        <li>Custom color matching</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Metallic Epoxy</h3>
+                    <p>Stunning 3D metallic finishes that create one-of-a-kind looks for showrooms, homes, and commercial spaces.</p>
+                    <ul class="service-list">
+                        <li>Custom metallic blends</li>
+                        <li>Unique depth effects</li>
+                        <li>Multiple color options</li>
+                        <li>High-gloss clarity coat</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Commercial Floors</h3>
+                    <p>Industrial-grade flooring solutions built to withstand heavy traffic, equipment, and daily operations.</p>
+                    <ul class="service-list">
+                        <li>Fast-cure systems</li>
+                        <li>Chemical resistant</li>
+                        <li>Minimal downtime</li>
+                        <li>Safety line striping</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Concrete Staining</h3>
+                    <p>Beautiful acid stains and water-based staining that brings color and character to any concrete surface.</p>
+                    <ul class="service-list">
+                        <li>Acid staining</li>
+                        <li>Water-based stains</li>
+                        <li>Custom color mixing</li>
+                        <li>Sealer application</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Concrete Overlays</h3>
+                    <p>Repair and resurface damaged concrete with durable overlays that look brand new.</p>
+                    <ul class="service-list">
+                        <li>Self-leveling overlays</li>
+                        <li>Stamped concrete</li>
+                        <li>Microtopping systems</li>
+                        <li>Crack repair</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Concrete Polishing</h3>
+                    <p>Professional diamond grinding and polishing for smooth, glossy, low-maintenance concrete floors.</p>
+                    <ul class="service-list">
+                        <li>Diamond grinding</li>
+                        <li>Multi-level polishing</li>
+                        <li>Densifier treatment</li>
+                        <li>Custom gloss levels</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-tag">Our Work</div>
+                <h2 class="section-title">Recent Projects</h2>
+                <p class="section-subtitle">See the quality craftsmanship we deliver on every concrete and epoxy project.</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/693a1881b26327617cac98e3.png" alt="Epoxy Flooring Project">
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/693a1877acebf72aeb13e015.png" alt="Metallic Epoxy Floor">
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/693a1874b2632777f3ac97e7.png" alt="Garage Floor Coating">
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/693a1873b263270b08ac97d9.png" alt="Commercial Epoxy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Ready to Transform Your Floors?</h2>
+            <p>Get your free, no-obligation estimate today. Call us or request a quote online.</p>
+            <a href="tel:555-555-0199" class="btn btn-large">Call (555) 555-0199</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h4>Pro Concrete & Coatings</h4>
+                <p>Premium epoxy and concrete coating services for residential and commercial properties.</p>
+                <p style="margin-top: 1rem;">Licensed, bonded, and insured</p>
+            </div>
+            <div>
+                <h4>Services</h4>
+                <a href="#services">Garage Floor Epoxy</a>
+                <a href="#services">Metallic Epoxy</a>
+                <a href="#services">Commercial Floors</a>
+                <a href="#services">Concrete Staining</a>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <p>Phone: (555) 555-0199</p>
+                <p>Email: info@procoatings.com</p>
+                <p>Mon-Sat: 7AM - 6PM</p>
+            </div>
+            <div>
+                <h4>Service Areas</h4>
+                <p>Your County</p>
+                <p>Surrounding Areas</p>
+                <p>Regional Service</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Pro Concrete & Coatings. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
