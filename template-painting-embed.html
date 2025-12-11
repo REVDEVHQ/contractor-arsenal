@@ -1,567 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Templates - Contractor Arsenal</title>
-    <meta name="description" content="Browse professional website templates built specifically for contractors. Pick your industry and launch in minutes.">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary: #FF3B30;
-            --secondary: #FF9500;
-            --dark: #000000;
-            --dark-alt: #1a1a1a;
-            --white: #ffffff;
-            --gray: #8E8E93;
-            --light-bg: #f5f5f7;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--dark);
-            line-height: 1.6;
-        }
-        
-        .header {
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(20px);
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .header-wrap {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo-img {
-            height: 45px;
-            width: auto;
-        }
-        
-        .nav {
-            display: flex;
-            gap: 40px;
-            align-items: center;
-        }
-        
-        .nav a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            transition: all 0.2s;
-            opacity: 0.9;
-        }
-        
-        .nav a:hover {
-            opacity: 1;
-            color: var(--secondary);
-        }
-        
-        .btn {
-            padding: 14px 28px;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 15px;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-gradient {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: var(--white);
-        }
-        
-        .btn-gradient:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 32px rgba(255, 59, 48, 0.4);
-        }
-        
-        .btn-outline {
-            border: 2px solid var(--dark);
-            color: var(--dark);
-            background: transparent;
-        }
-        
-        .btn-outline:hover {
-            background: var(--dark);
-            color: var(--white);
-        }
-        
-        .page-hero {
-            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-alt) 100%);
-            padding: 100px 40px 80px;
-            text-align: center;
-            color: var(--white);
-        }
-        
-        .page-hero h1 {
-            font-size: 56px;
-            font-weight: 900;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-        }
-        
-        .page-hero p {
-            font-size: 22px;
-            color: rgba(255, 255, 255, 0.8);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .filter-bar {
-            background: var(--white);
-            padding: 30px 40px;
-            border-bottom: 1px solid #f0f0f0;
-            position: sticky;
-            top: 85px;
-            z-index: 100;
-        }
-        
-        .filter-wrap {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .filter-btn {
-            padding: 12px 24px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            background: var(--white);
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        
-        .filter-btn:hover,
-        .filter-btn.active {
-            border-color: var(--secondary);
-            background: linear-gradient(135deg, rgba(255, 59, 48, 0.05) 0%, rgba(255, 149, 0, 0.05) 100%);
-            color: var(--primary);
-        }
-        
-        .section {
-            padding: 80px 40px;
-        }
-        
-        .wrap {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .templates-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 35px;
-        }
-        
-        .template-card {
-            background: var(--white);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-        
-        .template-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 48px rgba(0, 0, 0, 0.15);
-            border-color: var(--secondary);
-        }
-        
-        .template-preview {
-            height: 320px;
-            background: #ffffff;
-            position: relative;
-            overflow: hidden;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        
-        .template-preview iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            pointer-events: none;
-            transform: scale(0.75);
-            transform-origin: top left;
-            width: 133%;
-            height: 133%;
-        }
-        
-        .template-preview::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(45deg, transparent 40%, rgba(255, 149, 0, 0.05) 50%, transparent 60%);
-            opacity: 0;
-            transition: opacity 0.3s;
-            pointer-events: none;
-        }
-        
-        .template-card:hover .template-preview::after {
-            opacity: 1;
-        }
-        
-        .template-info {
-            padding: 30px;
-        }
-        
-        .template-badges {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 15px;
-        }
-        
-        .template-badge {
-            display: inline-block;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .badge-popular {
-            background: linear-gradient(135deg, rgba(255, 59, 48, 0.15) 0%, rgba(255, 149, 0, 0.15) 100%);
-            color: var(--primary);
-        }
-        
-        .badge-new {
-            background: rgba(52, 199, 89, 0.15);
-            color: #34C759;
-        }
-        
-        .badge-premium {
-            background: rgba(175, 82, 222, 0.15);
-            color: #AF52DE;
-        }
-        
-        .template-info h3 {
-            font-size: 22px;
-            font-weight: 800;
-            margin-bottom: 10px;
-        }
-        
-        .template-info p {
-            color: var(--gray);
-            font-size: 15px;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-        
-        .template-industries {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 20px;
-        }
-        
-        .industry-tag {
-            background: var(--light-bg);
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--dark);
-        }
-        
-        .template-actions {
-            display: flex;
-            gap: 12px;
-        }
-        
-        .template-actions .btn {
-            flex: 1;
-            text-align: center;
-            font-size: 14px;
-            padding: 12px 20px;
-        }
-        
-        .cta-section {
-            padding: 100px 40px;
-            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-alt) 100%);
-            text-align: center;
-            color: var(--white);
-        }
-        
-        .cta-section h2 {
-            font-size: 48px;
-            font-weight: 900;
-            margin-bottom: 25px;
-        }
-        
-        .cta-section p {
-            font-size: 20px;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 40px;
-        }
-        
-        footer {
-            background: #000000;
-            color: var(--white);
-            padding: 60px 40px 30px;
-        }
-        
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 50px;
-        }
-        
-        footer h4 {
-            font-size: 16px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        footer a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 12px;
-            transition: color 0.2s;
-        }
-        
-        footer a:hover {
-            color: var(--secondary);
-        }
-        
-        .footer-bottom {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 14px;
-        }
-        
-        @media (max-width: 968px) {
-            .nav {
-                display: none;
-            }
-            
-            .page-hero h1 {
-                font-size: 38px;
-            }
-            
-            .templates-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<style>
+body{margin:0;font-family:system-ui;font-size:11px;overflow:hidden;}
+.hero{background:#1e272e;color:#fff;padding:40px 20px;text-align:center;}
+h1{font-size:24px;margin:0 0 10px;}
+p{margin:0 0 15px;opacity:0.9;}
+.btn{background:#d63031;color:#fff;padding:8px 16px;border-radius:20px;text-decoration:none;font-weight:700;display:inline-block;}
+.services{padding:30px 20px;background:#f8f9fa;}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.card{
+    background:#fff;
+    padding:15px;
+    border-radius:8px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
+
+.card h3{
+    font-size:14px;
+    margin:0 0 8px;
+    color:#d63031;
+}
+</style>
 </head>
+
 <body>
-    <header class="header">
-        <div class="header-wrap">
-            <a href="index.html">
-                <img src="https://storage.googleapis.com/msgsndr/kfZT6c91jZcZU6PUztl8/media/69387c0a578cc7a588bf9199.png" alt="Contractor Arsenal" class="logo-img">
-            </a>
-            <nav class="nav">
-                <a href="features.html">Features</a>
-                <a href="templates.html" style="color: var(--secondary);">Templates</a>
-                <a href="https://buy.stripe.com/dRm9AT9oXfZVfeR7Qq9bO0B">Pricing</a>
-                <a href="about.html">About</a>
-                <a href="https://buy.stripe.com/dRm9AT9oXfZVfeR7Qq9bO0B" class="btn btn-gradient">Get Started</a>
-            </nav>
-        </div>
-    </header>
+<div class="hero">
+    <h1>Everett Pro Painting</h1>
+    <p>Premium Interior & Exterior Painting</p>
+    <a href="#" class="btn">Get Free Estimate</a>
+</div>
 
-    <section class="page-hero">
-        <h1>Premium Templates for Every Trade</h1>
-        <p>Professional designs built specifically for contractors. Choose your industry and customize in minutes.</p>
-    </section>
+<div class="services">
+    <div class="grid">
 
-    <div class="filter-bar">
-        <div class="filter-wrap">
-            <button class="filter-btn active">All Templates</button>
-            <button class="filter-btn">Painters</button>
-            <button class="filter-btn">Roofers</button>
-            <button class="filter-btn">Landscapers</button>
-            <button class="filter-btn">Remodeling</button>
-            <button class="filter-btn">Concrete/Epoxy</button>
-            <button class="filter-btn">HVAC</button>
-            <button class="filter-btn">Plumbers</button>
-            <button class="filter-btn">Electricians</button>
+        <div class="card">
+            <h3>Interior Painting</h3>
+            <p>Smooth finishes, modern colors, and flawless results.</p>
         </div>
+
+        <div class="card">
+            <h3>Exterior Painting</h3>
+            <p>Weather-resistant coatings that last for years.</p>
+        </div>
+
+        <div class="card">
+            <h3>Cabinet Refinishing</h3>
+            <p>Factory-grade coatings for a brand-new look.</p>
+        </div>
+
     </div>
-
-    <section class="section">
-        <div class="wrap">
-            <div class="templates-grid">
-                <!-- PAINTING TEMPLATE -->
-                <div class="template-card" data-categories="painters remodeling general">
-                    <div class="template-preview">
-                        <iframe src="data:text/html;charset=utf-8,%3C!DOCTYPE%20html%3E%0A%3Chtml%3E%0A%3Chead%3E%0A%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%3Cstyle%3E%0Abody%7Bmargin%3A0%3Bfont-family%3Asystem-ui%3Bfont-size%3A11px%3Boverflow%3Ahidden%3B%7D%0A.hero%7Bbackground%3A%231e272e%3Bcolor%3A%23fff%3Bpadding%3A40px%2020px%3Btext-align%3Acenter%3B%7D%0Ah1%7Bfont-size%3A24px%3Bmargin%3A0%200%2010px%3B%7D%0Ap%7Bmargin%3A0%200%2015px%3Bopacity%3A0.9%3B%7D%0A.btn%7Bbackground%3A%23d63031%3Bcolor%3A%23fff%3Bpadding%3A8px%2016px%3Bborder-radius%3A20px%3Btext-decoration%3Anone%3Bfont-weight%3A700%3Bdisplay%3Ainline-block%3B%7D%0A.services%7Bpadding%3A30px%2020px%3Bbackground%3A%23f8f9fa%3B%7D%0A.grid%7Bdisplay%3Agrid%3Bgrid-template-columns%3Arepeat(3%2C1fr)%3Bgap%3A15px%3B%7D%0A.card%7Bbackground%3A%23fff%3Bpadding%3A15px%3Bborder-radius%3A8px%3Bbox-shadow%3A0%202px%2010px%20rgba(0%2C0%2C0%2C0.08)%3B%7D%0A.card%20h3%7Bfont-size%3A14px%3Bmargin%3A0%200%208px%3Bcolor%3A%23d63031%3B%7D%0A%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%3Cdiv%20class%3D%22hero%22%3E%0A%20%20%20%20%3Ch1%3EEverett%20Pro%20Painting%3C%2Fh1%3E%0A%20%20%20%20%3Cp%3EPremium%20Interior%20%26%20Exterior%20Painting%3C%2Fp%3E%0A%20%20%20%20%3Ca%20href%3D%22%23%22%20class%3D%22btn%22%3EGet%20Free%20Estimate%3C%2Fa%3E%0A%3C%2Fdiv%3E%0A%3Cdiv%20class%3D%22services%22%3E%0A%20%20%20%20%3Cdiv%20class%3D%22grid%22%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22card%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ch3%3EInterior%20Painting%3C%2Fh3%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cp%3ESmooth%20finishes%2C%20modern%20colors%2C%20and%20flawless%20results.%3C%2Fp%3E%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22card%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ch3%3EExterior%20Painting%3C%2Fh3%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cp%3EWeather-resistant%20coatings%20that%20last%20for%20years.%3C%2Fp%3E%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22card%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ch3%3ECabinet%20Refinishing%3C%2Fh3%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cp%3EFactory-grade%20coatings%20for%20a%20brand-new%20look.%3C%2Fp%3E%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%3C%2Fdiv%3E%0A%3C%2Fdiv%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E" scrolling="no"></iframe>
-                    </div>
-                    <div class="template-info">
-                        <div class="template-badges">
-                            <span class="template-badge badge-popular">Most Popular</span>
-                        </div>
-                        <h3>The Builder V1 - Painting</h3>
-                        <p>Bold, modern design with a focus on conversions. Perfect for painters, remodelers, and general contractors.</p>
-                        <div class="template-industries">
-                            <span class="industry-tag">Painters</span>
-                            <span class="industry-tag">Remodeling</span>
-                            <span class="industry-tag">General</span>
-                        </div>
-                        <div class="template-actions">
-                            <a href="painting-template-fixed.html" class="btn btn-outline" target="_blank">Preview</a>
-                            <a href="https://buy.stripe.com/dRm9AT9oXfZVfeR7Qq9bO0B" class="btn btn-gradient">Use Template</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- REMODELING TEMPLATE -->
-                <div class="template-card" data-categories="remodeling construction luxury">
-                    <div class="template-preview">
-                        <iframe src="data:text/html;charset=utf-8,%3C!DOCTYPE%20html%3E%0A%3Chtml%3E%0A%3Chead%3E%0A%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%3Cstyle%3E%0Abody%20%7B%0A%20%20%20%20margin%3A%200%3B%0A%20%20%20%20font-family%3A%20system-ui%2C%20sans-serif%3B%0A%20%20%20%20font-size%3A%2011px%3B%0A%20%20%20%20overflow%3A%20hidden%3B%0A%20%20%20%20background%3A%20%231a1a1a%3B%0A%20%20%20%20color%3A%20%23fff%3B%0A%7D%0A.hero%20%7B%0A%20%20%20%20padding%3A%2040px%2020px%3B%0A%20%20%20%20text-align%3A%20center%3B%0A%7D%0Ah1%20%7B%0A%20%20%20%20font-size%3A%2024px%3B%0A%20%20%20%20margin%3A%200%200%2010px%3B%0A%20%20%20%20font-weight%3A%20900%3B%0A%7D%0A.highlight%20%7B%0A%20%20%20%20color%3A%20%232563eb%3B%0A%7D%0Ap%20%7B%0A%20%20%20%20margin%3A%200%200%2015px%3B%0A%20%20%20%20opacity%3A%200.85%3B%0A%7D%0A.btn%20%7B%0A%20%20%20%20background%3A%20%232563eb%3B%0A%20%20%20%20color%3A%20%23fff%3B%0A%20%20%20%20padding%3A%208px%2016px%3B%0A%20%20%20%20border-radius%3A%206px%3B%0A%20%20%20%20text-decoration%3A%20none%3B%0A%20%20%20%20font-weight%3A%20700%3B%0A%20%20%20%20display%3A%20inline-block%3B%0A%7D%0A.stats%20%7B%0A%20%20%20%20display%3A%20flex%3B%0A%20%20%20%20justify-content%3A%20center%3B%0A%20%20%20%20gap%3A%2020px%3B%0A%20%20%20%20padding%3A%2020px%3B%0A%20%20%20%20background%3A%20%230d0d0d%3B%0A%7D%0A.stat%20%7B%0A%20%20%20%20text-align%3A%20center%3B%0A%7D%0A.stat-num%20%7B%0A%20%20%20%20font-size%3A%2020px%3B%0A%20%20%20%20font-weight%3A%20900%3B%0A%20%20%20%20color%3A%20%232563eb%3B%0A%7D%0A.services%20%7B%0A%20%20%20%20padding%3A%2030px%2020px%3B%0A%20%20%20%20background%3A%20%23f3f4f6%3B%0A%20%20%20%20color%3A%20%231a1a1a%3B%0A%7D%0A.grid%20%7B%0A%20%20%20%20display%3A%20grid%3B%0A%20%20%20%20grid-template-columns%3A%20repeat(3%2C%201fr)%3B%0A%20%20%20%20gap%3A%2015px%3B%0A%7D%0A.card%20%7B%0A%20%20%20%20background%3A%20%23fff%3B%0A%20%20%20%20padding%3A%2015px%3B%0A%20%20%20%20border-radius%3A%208px%3B%0A%7D%0A.card%20h3%20%7B%0A%20%20%20%20font-size%3A%2014px%3B%0A%20%20%20%20margin%3A%200%200%208px%3B%0A%20%20%20%20color%3A%20%232563eb%3B%0A%7D%0A%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%3Cdiv%20class%3D%22hero%22%3E%0A%20%20%20%20%3Ch1%3EBuilding%20Excellence%2C%20%3Cspan%20class%3D%22highlight%22%3ECreating%20Legacy%3C%2Fspan%3E%3C%2Fh1%3E%0A%20%20%20%20%3Cp%3EExpert%20craftsmanship%20and%20professional%20service%3C%2Fp%3E%0A%20%20%20%20%3Ca%20href%3D%22%23%22%20class%3D%22btn%22%3EGet%20Free%20Estimate%3C%2Fa%3E%0A%3C%2Fdiv%3E%0A%3Cdiv%20class%3D%22stats%22%3E%0A%20%20%20%20%3Cdiv%20class%3D%22stat%22%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22stat-num%22%3E20%2B%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%3EYears%3C%2Fdiv%3E%0A%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%3Cdiv%20class%3D%22stat%22%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22stat-num%22%3E500%2B%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%3EProjects%3C%2Fdiv%3E%0A%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%3Cdiv%20class%3D%22stat%22%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22stat-num%22%3E98%25%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%3ESatisfaction%3C%2Fdiv%3E%0A%20%20%20%20%3C%2Fdiv%3E%0A%3C%2Fdiv%3E%0A%3Cdiv%20class%3D%22services%22%3E%0A%20%20%20%20%3Cdiv%20class%3D%22grid%22%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22card%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ch3%3ECustom%20Homes%3C%2Fh3%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cp%3EDream%20home%20construction%3C%2Fp%3E%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22card%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ch3%3EKitchen%20Remodeling%3C%2Fh3%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cp%3EPremium%20countertop%20and%20cabinet%20upgrades%3C%2Fp%3E%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22card%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ch3%3EBathroom%20Renovation%3C%2Fh3%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cp%3ESpa-like%20luxury%20transformations%3C%2Fp%3E%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%3C%2Fdiv%3E%0A%3C%2Fdiv%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E" scrolling="no"></iframe>
-                    </div>
-                    <div class="template-info">
-                        <div class="template-badges">
-                            <span class="template-badge badge-premium">Premium</span>
-                        </div>
-                        <h3>The Pro - Construction & Remodeling</h3>
-                        <p>Luxury design for high-end contractors. Elegant layouts with premium finishes that command higher prices.</p>
-                        <div class="template-industries">
-                            <span class="industry-tag">Remodeling</span>
-                            <span class="industry-tag">Construction</span>
-                            <span class="industry-tag">Luxury Homes</span>
-                        </div>
-                        <div class="template-actions">
-                            <a href="remodeling-template-fixed.html" class="btn btn-outline" target="_blank">Preview</a>
-                            <a href="https://buy.stripe.com/dRm9AT9oXfZVfeR7Qq9bO0B" class="btn btn-gradient">Use Template</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ROOFING TEMPLATE -->
-                <div class="template-card" data-categories="roofers hvac plumbers">
-                    <div class="template-preview">
-                        <iframe src="data:text/html;charset=utf-8,%3C!DOCTYPE%20html%3E%0A%3Chtml%3E%0A%3Chead%3E%0A%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%3Cstyle%3E%0Abody%7Bmargin%3A0%3Bfont-family%3Asystem-ui%3Bfont-size%3A11px%3Boverflow%3Ahidden%3Bbackground%3A%23ffffff%3B%7D%0A.hero%7B%0A%20%20%20%20background%3Alinear-gradient(135deg%2Crgba(30%2C64%2C175%2C0.9)%2Crgba(15%2C23%2C42%2C0.85))%2C%230f172a%3B%0A%20%20%20%20color%3A%23fff%3B%0A%20%20%20%20padding%3A40px%2020px%3B%0A%20%20%20%20text-align%3Acenter%3B%0A%7D%0Ah1%7B%0A%20%20%20%20font-size%3A24px%3B%0A%20%20%20%20margin%3A0%200%2010px%3B%0A%20%20%20%20font-weight%3A800%3B%0A%7D%0Ap%7B%0A%20%20%20%20margin%3A0%200%2015px%3B%0A%20%20%20%20opacity%3A0.95%3B%0A%7D%0A.btn%7B%0A%20%20%20%20background%3A%23f59e0b%3B%0A%20%20%20%20color%3A%23fff%3B%0A%20%20%20%20padding%3A8px%2016px%3B%0A%20%20%20%20border-radius%3A20px%3B%0A%20%20%20%20text-decoration%3Anone%3B%0A%20%20%20%20font-weight%3A700%3B%0A%20%20%20%20display%3Ainline-block%3B%0A%7D%0A.stats%7B%0A%20%20%20%20display%3Aflex%3B%0A%20%20%20%20justify-content%3Acenter%3B%0A%20%20%20%20gap%3A20px%3B%0A%20%20%20%20padding%3A15px%3B%0A%20%20%20%20background%3Argba(255%2C255%2C255%2C0.12)%3B%0A%20%20%20%20border-radius%3A8px%3B%0A%20%20%20%20margin-top%3A20px%3B%0A%7D%0A.stat-val%7B%0A%20%20%20%20font-size%3A18px%3B%0A%20%20%20%20font-weight%3A800%3B%0A%20%20%20%20color%3A%23f59e0b%3B%0A%7D%0A.features%7B%0A%20%20%20%20padding%3A30px%2020px%3B%0A%20%20%20%20background%3A%23f8fafc%3B%0A%7D%0A.grid%7B%0A%20%20%20%20display%3Agrid%3B%0A%20%20%20%20grid-template-columns%3Arepeat(3%2C1fr)%3B%0A%20%20%20%20gap%3A15px%3B%0A%7D%0A.card%7B%0A%20%20%20%20background%3A%23fff%3B%0A%20%20%20%20padding%3A15px%3B%0A%20%20%20%20border-radius%3A8px%3B%0A%20%20%20%20text-align%3Acenter%3B%0A%20%20%20%20border%3A2px%20solid%20%23e2e8f0%3B%0A%7D%0A.card%20h3%7B%0A%20%20%20%20font-size%3A14px%3B%0A%20%20%20%20margin%3A0%200%208px%3B%0A%20%20%20%20color%3A%231e40af%3B%0A%20%20%20%20font-weight%3A700%3B%0A%7D%0A.card%20p%7B%0A%20%20%20%20margin%3A0%3B%0A%20%20%20%20font-size%3A11px%3B%0A%20%20%20%20opacity%3A0.8%3B%0A%7D%0A%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%3Cdiv%20class%3D%22hero%22%3E%0A%20%20%20%20%3Ch1%3ERoofing%20You%20Can%20Rely%20On%3C%2Fh1%3E%0A%20%20%20%20%3Cp%3EExpert%20installation.%20Premium%20materials.%20Trusted%20service.%3C%2Fp%3E%0A%20%20%20%20%3Ca%20href%3D%22%23%22%20class%3D%22btn%22%3EFree%20Inspection%3C%2Fa%3E%0A%20%20%20%20%3Cdiv%20class%3D%22stats%22%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22stat-val%22%3E2%2C500%2B%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20style%3D%22font-size%3A10px%3B%22%3ERoofs%20Installed%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22stat-val%22%3E20%2B%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20style%3D%22font-size%3A10px%3B%22%3EYears%20Experience%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22stat-val%22%3E100%25%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20style%3D%22font-size%3A10px%3B%22%3ESatisfaction%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%3C%2Fdiv%3E%0A%3C%2Fdiv%3E%0A%3Cdiv%20class%3D%22features%22%3E%0A%20%20%20%20%3Cdiv%20class%3D%22grid%22%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22card%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20style%3D%22font-size%3A20px%3Bmargin-bottom%3A8px%3B%22%3E%E2%9C%93%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ch3%3ELicensed%20%26%20Insured%3C%2Fh3%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cp%3EFull%20protection.%3C%2Fp%3E%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22card%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20style%3D%22font-size%3A20px%3Bmargin-bottom%3A8px%3B%22%3E%E2%AD%90%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ch3%3EPremium%20Materials%3C%2Fh3%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cp%3ETop-grade%20systems.%3C%2Fp%3E%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22card%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20style%3D%22font-size%3A20px%3Bmargin-bottom%3A8px%3B%22%3E%E2%9A%A1%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ch3%3EFast%20Service%3C%2Fh3%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cp%3ERapid%20response.%3C%2Fp%3E%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%3C%2Fdiv%3E%0A%3C%2Fdiv%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E" scrolling="no"></iframe>
-                    </div>
-                    <div class="template-info">
-                        <div class="template-badges">
-                            <span class="template-badge badge-new">New</span>
-                        </div>
-                        <h3>The Specialist - Roofing</h3>
-                        <p>Clean, trust-focused layout for specialized trades. Built for roofers, HVAC, plumbers, and electricians.</p>
-                        <div class="template-industries">
-                            <span class="industry-tag">Roofers</span>
-                            <span class="industry-tag">HVAC</span>
-                            <span class="industry-tag">Plumbers</span>
-                        </div>
-                        <div class="template-actions">
-                            <a href="roofing-template-fixed.html" class="btn btn-outline" target="_blank">Preview</a>
-                            <a href="https://buy.stripe.com/dRm9AT9oXfZVfeR7Qq9bO0B" class="btn btn-gradient">Use Template</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- More templates can be added here -->
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <h2>Ready to Launch Your Website?</h2>
-        <p>Pick any template and customize it to match your brand in under 10 minutes.</p>
-        <a href="https://buy.stripe.com/dRm9AT9oXfZVfeR7Qq9bO0B" class="btn btn-gradient" style="font-size: 18px; padding: 18px 40px;">Get Started Today</a>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <div>
-                <h4>Contractor Arsenal</h4>
-                <p style="color: rgba(255,255,255,0.7); line-height: 1.8;">The first real website platform built exclusively for contractors.</p>
-            </div>
-            
-            <div>
-                <h4>Platform</h4>
-                <a href="features.html">Features</a>
-                <a href="templates.html">Templates</a>
-                <a href="https://buy.stripe.com/dRm9AT9oXfZVfeR7Qq9bO0B">Pricing</a>
-            </div>
-            
-            <div>
-                <h4>Resources</h4>
-                <a href="about.html">About</a>
-                <a href="#">Support</a>
-                <a href="#">Contact</a>
-            </div>
-            
-            <div>
-                <h4>Legal</h4>
-                <a href="#">Terms</a>
-                <a href="#">Privacy</a>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 Contractor Arsenal. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Filter functionality
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                // Update active state
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                
-                // Get filter category
-                const filterText = this.textContent.trim().toLowerCase();
-                const isAllTemplates = filterText === 'all templates';
-                
-                // Show/hide templates
-                document.querySelectorAll('.template-card').forEach(card => {
-                    if (isAllTemplates) {
-                        card.style.display = 'block';
-                    } else {
-                        const categories = card.getAttribute('data-categories') || '';
-                        const shouldShow = categories.includes(filterText);
-                        card.style.display = shouldShow ? 'block' : 'none';
-                    }
-                });
-            });
-        });
-    </script>
+</div>
 </body>
 </html>
