@@ -672,9 +672,33 @@
             margin: 0 auto;
             padding-top: 40px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             color: rgba(255, 255, 255, 0.5);
             font-size: 14px;
+        }
+        
+        .agency-portal-link {
+            background: rgba(255, 149, 0, 0.1);
+            border: 1px solid rgba(255, 149, 0, 0.3);
+            color: var(--secondary);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .agency-portal-link:hover {
+            background: rgba(255, 149, 0, 0.2);
+            border-color: var(--secondary);
+            color: var(--secondary);
+            transform: translateY(-2px);
         }
         
         /* Mobile Menu */
@@ -732,6 +756,12 @@
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
             }
             
             .section-header h2 {
@@ -1042,6 +1072,10 @@
         
         <div class="footer-bottom">
             <p>&copy; 2024 Contractor Arsenal. All rights reserved.</p>
+            <a href="agency-portal.html" class="agency-portal-link">
+                <span>🏢</span>
+                <span>Agency Partner Portal</span>
+            </a>
         </div>
     </footer>
 </body>
